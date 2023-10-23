@@ -14,12 +14,12 @@ public class APIRoutes {
 	}
 
 /**
- * This is a basic call to our springboot API.
- * This is a GET request to the /hello endpoint.
- * The @RequestParam annotation is used to extract query parameters from the request.
- * The @RequestParam annotation has two attributes:
- * 1. value: the name of the request parameter
- * 2. defaultValue: the default value to use as a fallback when the request parameter is not provided
+  * This is a basic call to our springboot API.
+  * 	This is a GET request to the /hello endpoint.
+  * 	The @RequestParam annotation is used to extract query parameters from the request.
+  * 	The @RequestParam annotation has two attributes:
+  * 		1. value: the name of the request parameter
+  * 		2. defaultValue: the default value to use as a fallback when the request parameter is not provided
  **/
 	@GetMapping("/hello")
 	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
