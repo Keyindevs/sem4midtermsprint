@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="Initial versioning of files">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/APIRoutes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/SprintApplication.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +86,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.ignored.files",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -92,9 +95,30 @@
       <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint" />
+      <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint\src" />
       <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint\.idea" />
+      <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="APIRoutes" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sprint" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.keyin.sprint.APIRoutes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.keyin.sprint.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.APIRoutes" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -107,7 +131,7 @@
       <workItem from="1698074002548" duration="3000" />
       <workItem from="1698078876190" duration="138000" />
       <workItem from="1698079049502" duration="1515000" />
-      <workItem from="1698080742426" duration="657000" />
+      <workItem from="1698080742426" duration="1543000" />
     </task>
     <task id="LOCAL-00001" summary="Initial versioning of files">
       <option name="closed" value="true" />
@@ -141,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698079568718</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Initial versioning of files">
+      <option name="closed" value="true" />
+      <created>1698081642414</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698081642414</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
