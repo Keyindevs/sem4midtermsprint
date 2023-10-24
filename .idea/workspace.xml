@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="Initial API route /Hello created as example" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Sixsinglebird"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d03d5d58-776f-4ca6-af93-5aa1200dde84" />
+        <option name="url" value="git@github.com:Keyindevs/sem4midtermsprint.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="generatedSourcesFolder" value="GENERATED_SOURCE_FOLDER" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2XAZmJgFFxi7hreiV8LKDcbqZGE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Java-Springboot-Server",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "openjdk-21",
+    "last_opened_file_path": "C:/Users/singl/Documents/GitHub/sem4midtermsprint",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint\src" />
+      <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint\.idea" />
+      <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="APIRoutes" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sprint" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.keyin.sprint.APIRoutes" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.keyin.sprint.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.APIRoutes" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="" />
+      <created>1698074001510</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698074001510</updated>
+      <workItem from="1698074002548" duration="3000" />
+      <workItem from="1698078876190" duration="138000" />
+      <workItem from="1698079049502" duration="1515000" />
+      <workItem from="1698080742426" duration="2180000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial versioning of files">
+      <option name="closed" value="true" />
+      <created>1698079069789</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698079069789</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Initial versioning of files">
+      <option name="closed" value="true" />
+      <created>1698079278168</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698079278168</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Initial versioning of files">
+      <option name="closed" value="true" />
+      <created>1698079527645</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698079527645</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial versioning of files">
+      <option name="closed" value="true" />
+      <created>1698079568718</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698079568718</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial versioning of files">
+      <option name="closed" value="true" />
+      <created>1698081642414</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698081642414</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Initial API route /Hello created as example">
+      <option name="closed" value="true" />
+      <created>1698082357719</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698082357719</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Initial API route /Hello created as example">
+      <option name="closed" value="true" />
+      <created>1698082578085</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698082578085</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial versioning of files" />
+    <MESSAGE value="Initial API route /Hello created as example" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial API route /Hello created as example" />
+  </component>
+</project>
