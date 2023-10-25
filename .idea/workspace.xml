@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="puhsing as example structure">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-25__10_11_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-25__10_11_a_m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/APIRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/APIRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/SprintApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/SprintApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/target/classes/com/keyin/sprint/DemoApplication.class" beforeDir="false" />
-    </list>
+    <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="puhsing as example structure" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +73,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "API-implementation",
+    "git-widget-placeholder": "Updates",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "last_opened_file_path": "C:/Users/singl/Documents/GitHub/sem4midtermsprint",
@@ -106,19 +99,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="sem4midtermsprint" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="sem4midtermsprint" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="APIRoutes" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="sprint" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.keyin.sprint.APIRoutes" />
