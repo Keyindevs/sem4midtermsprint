@@ -13,9 +13,12 @@ public class Aircraft {
         this.numberOfPassengers = numberOfPassengers;
     }
 
+<<<<<<< HEAD
     public Aircraft(String s) {
     }
 
+=======
+>>>>>>> 5a83126 (puhsing as example structure)
     // Getters and setters for the fields
 
     public int getId() {
