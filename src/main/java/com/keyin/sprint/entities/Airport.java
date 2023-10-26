@@ -8,7 +8,7 @@ public class Airport {
     private int id;
     private String name;
     private String code;
-    private final List<Aircraft> onPremisePlanes = new ArrayList<>();;
+    private List<Aircraft> onPremisePlanes = new ArrayList<>();;
     private List<Passenger> onPremisePassengers = new ArrayList<>();
     private List<Passenger> exPassengers = new ArrayList<>();;
 
@@ -48,8 +48,8 @@ public class Airport {
         return onPremisePlanes;
     }
 
-    public void setOnPremisePlanes(Aircraft aircraft) {
-        this.onPremisePlanes.add(aircraft);
+    public void setOnPremisePlanes(List<Aircraft> onPremisePlanes) {
+        this.onPremisePlanes = onPremisePlanes;
     }
 
     public List<Passenger> getOnPremisePassengers() {
@@ -68,4 +68,11 @@ public class Airport {
         this.exPassengers = exPassengers;
     }
 
+    public List<Aircraft> getAircraft() {
+        return this.onPremisePlanes;
+    }
+
+    public void addAircraft(Aircraft aircraft) {
+        this.onPremisePlanes.add(aircraft);
+    }
 }
