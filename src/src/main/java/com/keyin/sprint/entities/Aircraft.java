@@ -13,6 +13,9 @@ public class Aircraft {
         this.numberOfPassengers = numberOfPassengers;
     }
 
+    public Aircraft(String plane1) {
+    }
+
     // Getters and setters for the fields
 
     public int getId() {
