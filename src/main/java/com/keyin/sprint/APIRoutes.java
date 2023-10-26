@@ -19,7 +19,7 @@ public class APIRoutes {
 	 private static List<Airport> airports = new ArrayList<>();
 	 private static List<City> cities = new ArrayList<>();
 //	 private static List<Passenger> passengers = new ArrayList<>();
-//	 private static List<Aircraft> aircraft = new ArrayList<>();
+	 private static List<Aircraft> aircraft = new ArrayList<>();
 
 
 	public static void main(String[] args) {
@@ -37,7 +37,14 @@ public class APIRoutes {
 		//AirPorts
 		airports.add(new Airport(0, "Default", "null"));
 		airports.add(new Airport(1, "John F. Kennedy International Airport", "JFK"));
-		cities.get(1).setAirport(airports.get(1));
+		cities.get(1).addAirport(airports.get(1));
+
+
+		//Aircraft
+		aircraft.add(new Aircraft(0, "Default", "null", 0));
+		aircraft.add(new Aircraft(1, "Boeing 747", "PAL", 416));
+		airports.get(1).addAircraft(aircraft.get(1));
+
 
 		SpringApplication.run(APIRoutes.class, args);
 	}
@@ -59,6 +66,26 @@ public class APIRoutes {
 		return String.format("Hello %s!", name);
 	}
 
+	@GetMapping("/cities")
+	public List<City> cities() {
+		return cities;
+    }
+
+	@GetMapping("/city")
+	public City city(@RequestParam(value = "id", defaultValue = "0") int id) {
+		return cities.get(id);
+	}
+
+	@GetMapping("/city/airports")
+	public ArrayList<Airport> airports(@RequestParam(value = "id", defaultValue = "0") int id) {
+		return cities.get(id).getAirports();
+	}
+
+	@GetMapping("/airport/aircraft")
+	public List<Aircraft> airport(@RequestParam(value = "id", defaultValue = "0") int id) {
+		return airports.get(id).getAircraft();
+	}
+
 	@GetMapping("/passengers")
 	public String passengers() {
 		return "This is a list of passengers!";
@@ -67,40 +94,6 @@ public class APIRoutes {
 	@GetMapping("/passenger")
 	public String passenger(@RequestParam(value = "id", defaultValue = "0") String id) {
 		return String.format("This is passenger %s!", id);
-	}
-
-	@GetMapping("/cities")
-	public String cities() {
-		StringBuilder tmp = new StringBuilder();
-		for (City city : cities) {
-			tmp.append(city.getName()).append("\n");
-		}
-		return tmp.toString();
-    }
-
-	@GetMapping("/city")
-	public String city(@RequestParam(value = "id", defaultValue = "0") int id) {
-		return cities.get(id).getName();
-	}
-
-	@GetMapping("/city/airports")
-	public ArrayList<Airport> airports(@RequestParam(value = "id", defaultValue = "0") int id) {
-		return cities.get(id).getAirports();
-	}
-
-	@GetMapping("/airport")
-	public String airport(@RequestParam(value = "id", defaultValue = "0") String id) {
-		return airports.get(Integer.parseInt(id)).getName();
-	}
-
-	@GetMapping("/aircrafts")
-	public String aircraft() {
-		return "This is a list of aircraft!";
-	}
-
-	@GetMapping("/aircraft")
-	public String aircraft(@RequestParam(value = "id", defaultValue = "0") String id) {
-		return String.format("This is aircraft %s!", id);
 	}
 
 	@GetMapping("/")

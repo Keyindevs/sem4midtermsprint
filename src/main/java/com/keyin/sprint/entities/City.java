@@ -26,9 +26,13 @@ public class City {
         this.airports = new ArrayList<>();
     }
 
+    public String display() {
+        return String.format("%s, ID: %d, State: %s, Population: %d", this.name, this.id, this.state, this.population);
+    }
+
     // Getters and setters for the fields
 
-    public void setAirport(Airport airport) {
+    public void addAirport(Airport airport) {
         this.airports.add(airport);
     }
 
