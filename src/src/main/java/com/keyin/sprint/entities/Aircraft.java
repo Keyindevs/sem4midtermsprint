@@ -13,7 +13,7 @@ public class Aircraft {
         this.numberOfPassengers = numberOfPassengers;
     }
 
-    public Aircraft(String plane1) {
+    public Aircraft(String s) {
     }
 
     // Getters and setters for the fields

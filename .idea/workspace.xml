@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="puhsing as example structure">
-      <change afterPath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/AirportTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-25__10_11_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-25__10_11_a_m___Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/AircraftTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Aircraft.java" afterDir="false" />
     </list>
