@@ -38,12 +38,35 @@ public class APIRoutes {
 		airports.add(new Airport(0, "Default", "null"));
 		airports.add(new Airport(1, "John F. Kennedy International Airport", "JFK"));
 		cities.get(1).addAirport(airports.get(1));
+		airports.add(new Airport(2, "Los Angeles International Airport", "LAX"));
+		cities.get(2).addAirport(airports.get(2));
+		airports.add(new Airport(3, "St. John's International Airport", "YYT"));
+		cities.get(3).addAirport(airports.get(3));
+		airports.add(new Airport(4, "Toronto Pearson International Airport", "YYZ"));
+		cities.get(4).addAirport(airports.get(4));
+		airports.add(new Airport(5, "Montreal-Pierre Elliott Trudeau International Airport", "YUL"));
+		cities.get(5).addAirport(airports.get(5));
+		airports.add(new Airport(6, "Vancouver International Airport", "YVR"));
+		cities.get(6).addAirport(airports.get(6));
 
 
 		//Aircraft
 		aircraft.add(new Aircraft(0, "Default", "null", 0));
 		aircraft.add(new Aircraft(1, "Boeing 747", "PAL", 416));
-		airports.get(1).addAircraft(aircraft.get(1));
+		airports.get(3).setOnPremisePlanes(aircraft.get(1));
+
+		aircraft.add(new Aircraft(2, "Airbus A380", "PAL", 853));
+		airports.get(3).setOnPremisePlanes(aircraft.get(2));
+		aircraft.add(new Aircraft(3, "Boeing 737", "PAL", 215));
+		airports.get(1).setOnPremisePlanes(aircraft.get(3));
+		aircraft.add(new Aircraft(4, "Airbus A330", "PAL", 335));
+		airports.get(4).setOnPremisePlanes(aircraft.get(4));
+		aircraft.add(new Aircraft(5, "Boeing 777", "PAL", 550));
+		airports.get(1).setOnPremisePlanes(aircraft.get(5));
+		aircraft.add(new Aircraft(6, "Airbus A350", "PAL", 366));
+		airports.get(1).setOnPremisePlanes(aircraft.get(6));
+
+		//Passengers
 
 
 		SpringApplication.run(APIRoutes.class, args);
@@ -83,7 +106,7 @@ public class APIRoutes {
 
 	@GetMapping("/airport/aircraft")
 	public List<Aircraft> airport(@RequestParam(value = "id", defaultValue = "0") int id) {
-		return airports.get(id).getAircraft();
+		return airports.get(id).getOnPremisePlanes();
 	}
 
 	@GetMapping("/passengers")
