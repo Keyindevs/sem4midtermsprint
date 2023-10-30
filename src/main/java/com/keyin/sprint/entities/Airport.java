@@ -1,15 +1,16 @@
 package com.keyin.sprint.entities;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Airport {
     private int id;
     private String name;
     private String code;
-    private List<Aircraft> onPremisePlanes;
-    private List<Passenger> onPremisePassengers;
-    private List<Passenger> exPassengers;
+    private final List<Aircraft> onPremisePlanes = new ArrayList<>();;
+    private List<Passenger> onPremisePassengers = new ArrayList<>();
+    private List<Passenger> exPassengers = new ArrayList<>();;
 
     public Airport(int id, String name, String code) {
         this.id = id;
@@ -47,8 +48,8 @@ public class Airport {
         return onPremisePlanes;
     }
 
-    public void setOnPremisePlanes(List<Aircraft> onPremisePlanes) {
-        this.onPremisePlanes = onPremisePlanes;
+    public void setOnPremisePlanes(Aircraft aircraft) {
+        this.onPremisePlanes.add(aircraft);
     }
 
     public List<Passenger> getOnPremisePassengers() {
@@ -66,4 +67,5 @@ public class Airport {
     public void setExPassengers(List<Passenger> exPassengers) {
         this.exPassengers = exPassengers;
     }
+
 }
