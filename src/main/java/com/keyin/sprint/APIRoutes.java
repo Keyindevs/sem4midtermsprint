@@ -67,7 +67,7 @@ public class APIRoutes {
 		aircraft.get(0).addPassenger(passengers.get(0));
 		cities.get(0).addHabitant(passengers.get(0));
 
-		passengers.add(new Passenger("John", "Smith", "St. Johns", getNextId(passengers)));
+		passengers.add(new Passenger("John", "Doe", "St. Johns", getNextId(passengers)));
 		airports.get(2).getOnPremisePassengers().add(passengers.get(1));
 		cities.get(2).addHabitant(passengers.get(1));
 
@@ -162,7 +162,7 @@ POST /airport/aircraft?name={name}&code={code}&capacity={capacity}
 GET /passengers
 GET /passenger?id={id}
 POST /passenger?firstName={firstName}&lastName={lastName}&homeTown={homeTown}
-/
+GET /
 """;
 	}
 
