@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="Default example route added. &#10;made  function to fetch next objectList index">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-25__10_11_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-25__10_11_a_m___Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/APIRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/APIRoutes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Aircraft.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/keyin/sprint/AirportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/keyin/sprint/AirportTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/APIRoutes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/APIRoutes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Aircraft.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Aircraft.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/City.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +68,7 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2XAZmJgFFxi7hreiV8LKDcbqZGE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -104,7 +109,23 @@
       <recent name="C:\Users\singl\Documents\GitHub\sem4midtermsprint\.idea" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AirportTest.testOnPremisePlanes">
+    <configuration name="AirportTest.testOnPremisePlanes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.keyin.sprint.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.keyin.sprint" />
+      <option name="MAIN_CLASS_NAME" value="com.keyin.sprint.AirportTest" />
+      <option name="METHOD_NAME" value="testOnPremisePlanes" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="APIRoutes" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="sprint" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.keyin.sprint.APIRoutes" />
@@ -120,6 +141,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AirportTest.testOnPremisePlanes" />
         <item itemvalue="Spring Boot.APIRoutes" />
       </list>
     </recent_temporary>

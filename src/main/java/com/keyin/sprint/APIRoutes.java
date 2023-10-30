@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
@@ -19,18 +20,14 @@ public class APIRoutes {
 	 private static final List<Airport> airports = new ArrayList<>();
 	 private static final List<City> cities = new ArrayList<>();
 	 private static final List<Passenger> passengers = new ArrayList<>();
-	 private static final List<Aircraft> aircraft = new ArrayList<>();
+	 static final List<Aircraft> aircraft = new ArrayList<>();
 
 
 	public static void main(String[] args) {
         // cities
 		cities.add(new City(getNextId(cities), "Default", "null", 0));
 		cities.add(new City(getNextId(cities), "New York", "NY", 8623000));
-		cities.add(new City(getNextId(cities), "Los Angeles", "CA", 3999759));
 		cities.add(new City(getNextId(cities), "St. John's", "NL", 108860));
-		cities.add(new City(getNextId(cities), "Toronto", "ON", 2731571));
-		cities.add(new City(getNextId(cities), "Montreal", "QC", 1704694));
-		cities.add(new City(getNextId(cities), "Vancouver", "BC", 631486));
 
 
 		//AirPorts
@@ -40,20 +37,9 @@ public class APIRoutes {
 		airports.add(new Airport(getNextId(airports), "John F. Kennedy International Airport", "JFK"));
 		cities.get(1).addAirport(airports.get(1));
 
-		airports.add(new Airport(getNextId(airports), "Los Angeles International Airport", "LAX"));
+		airports.add(new Airport(getNextId(airports), "St. John's International Airport", "YYT"));
 		cities.get(2).addAirport(airports.get(2));
 
-		airports.add(new Airport(getNextId(airports), "St. John's International Airport", "YYT"));
-		cities.get(3).addAirport(airports.get(3));
-
-		airports.add(new Airport(getNextId(airports), "Toronto Pearson International Airport", "YYZ"));
-		cities.get(4).addAirport(airports.get(4));
-
-		airports.add(new Airport(getNextId(airports), "Montreal-Pierre Elliott Trudeau International Airport", "YUL"));
-		cities.get(5).addAirport(airports.get(5));
-
-		airports.add(new Airport(getNextId(airports), "Vancouver International Airport", "YVR"));
-		cities.get(6).addAirport(airports.get(6));
 
 
 		//Aircraft
@@ -61,16 +47,16 @@ public class APIRoutes {
 		airports.get(0).setOnPremisePlanes(aircraft.get(0));
 
 		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 747", "PAL", 416));
-		airports.get(3).setOnPremisePlanes(aircraft.get(1));
+		airports.get(2).setOnPremisePlanes(aircraft.get(1));
 
 		aircraft.add(new Aircraft(getNextId(aircraft), "Airbus A380", "PAL", 853));
-		airports.get(3).setOnPremisePlanes(aircraft.get(2));
+		airports.get(2).setOnPremisePlanes(aircraft.get(2));
 
 		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 737", "PAL", 215));
 		airports.get(1).setOnPremisePlanes(aircraft.get(3));
 
 		aircraft.add(new Aircraft(getNextId(aircraft), "Airbus A330", "PAL", 335));
-		airports.get(4).setOnPremisePlanes(aircraft.get(4));
+		airports.get(1).setOnPremisePlanes(aircraft.get(4));
 
 		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 777", "PAL", 550));
 		airports.get(1).setOnPremisePlanes(aircraft.get(5));
@@ -85,20 +71,13 @@ public class APIRoutes {
 		cities.get(0).addHabitant(passengers.get(0));
 
 		passengers.add(new Passenger("John", "Smith", "St. Johns", getNextId(passengers)));
-		airports.get(3).getOnPremisePassengers().add(passengers.get(1));
-		cities.get(3).addHabitant(passengers.get(1));
+		airports.get(2).getOnPremisePassengers().add(passengers.get(1));
+		cities.get(2).addHabitant(passengers.get(1));
 
-		passengers.add(new Passenger("Jane", "Doe", "Toronto", getNextId(passengers)));
-		airports.get(4).getOnPremisePassengers().add(passengers.get(2));
-		cities.get(4).addHabitant(passengers.get(2));
+		passengers.add(new Passenger("Jane", "Doe", "New York", getNextId(passengers)));
+		airports.get(1).getOnPremisePassengers().add(passengers.get(2));
+		cities.get(1).addHabitant(passengers.get(2));
 
-		passengers.add(new Passenger("John", "Doe", "Montreal", getNextId(passengers)));
-		airports.get(5).getOnPremisePassengers().add(passengers.get(3));
-		cities.get(5).addHabitant(passengers.get(3));
-
-		passengers.add(new Passenger("Jane", "Smith", "Vancouver", getNextId(passengers)));
-		airports.get(6).getOnPremisePassengers().add(passengers.get(4));
-		cities.get(6).addHabitant(passengers.get(4));
 
 
 		// Call our routes to actually run the API.
@@ -147,6 +126,13 @@ public class APIRoutes {
 		return airports.get(id).getOnPremisePlanes();
 	}
 
+	@PostMapping("/airport/aircraft")
+	public void addAircraft(@RequestParam(value = "name", defaultValue = "Default") String name,
+							@RequestParam(value = "code", defaultValue = "null") String code,
+							@RequestParam(value = "capacity", defaultValue = "null") int capacity) {
+		aircraft.add(new Aircraft(getNextId(aircraft), name, code, capacity));
+	}
+
 	@GetMapping("/passengers")
 	public String passengers() {
 		return "This is a list of passengers!";
@@ -157,17 +143,25 @@ public class APIRoutes {
 		return String.format("This is passenger %s!", id);
 	}
 
+	@PostMapping("/passenger")
+	public void addPassenger(@RequestParam(value = "firstName", defaultValue = "John") String firstName,
+							 @RequestParam(value = "lastName", defaultValue = "Doe") String lastName,
+							 @RequestParam(value = "homeTown", defaultValue = "default") String homeTown) {
+		passengers.add(new Passenger(firstName, lastName, homeTown, getNextId(passengers)));
+	}
+
+
 	@GetMapping("/")
 	public String home() {
 		return """
-Welcome to the Sprint API!
-Use the following endpoints to access the data:
-	/cities
-	/city?id=(int)
-	/city/airports?id=(int)
-	/airport/aircraft?id=(int)
-	/passengers
-	/passenger?id=(int)
+Welcome to the Sprint API! \n
+Use the following endpoints to access the data: \n
+	/cities \n
+	/city?id=(int) \n
+	/city/airports?id=(int) \n
+	/airport/aircraft?id=(int) \n
+	/passengers\n
+	/passenger?id=(int) \n
 	/
 """;
 	}

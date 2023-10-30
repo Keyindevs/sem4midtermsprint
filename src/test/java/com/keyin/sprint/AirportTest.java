@@ -37,11 +37,8 @@ public class AirportTest {
 
     @Test
     public void testOnPremisePlanes() {
-        List<Aircraft> planes = new ArrayList<>();
-        planes.add(new Aircraft("Boeing 747"));
-        planes.add(new Aircraft("Airbus A320"));
-        airport.setOnPremisePlanes(planes);
-        assertEquals(2, airport.getOnPremisePlanes().size());
+        airport.setOnPremisePlanes(new Aircraft(0, "Default", "test", 0));
+        assertEquals("test", airport.getOnPremisePlanes().get(0).getAirlineName());
     }
 
     @Test
