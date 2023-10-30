@@ -9,6 +9,7 @@ public class City {
     private int population;
 
     private final ArrayList<Airport> airports;
+    private final ArrayList<Passenger> habitants = new ArrayList<>();
 
     public City(int id, String name, String state, int population, ArrayList<Airport> airports) {
         this.id = id;
@@ -31,6 +32,14 @@ public class City {
     }
 
     // Getters and setters for the fields
+
+    public ArrayList<Passenger> getHabitants() {
+        return habitants;
+    }
+
+    public void addHabitant(Passenger passenger) {
+        this.habitants.add(passenger);
+    }
 
     public void addAirport(Airport airport) {
         this.airports.add(airport);
