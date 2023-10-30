@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="puhsing as example structure">
-      <change afterPath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/AircraftTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Aircraft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-25__10_11_a_m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-10-25__10_11_a_m___Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/APIRoutes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Aircraft.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Airport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/City.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/java/com/keyin/sprint/entities/Passenger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/AircraftTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/AirportTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/CityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/PassengerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/src/test/java/com/keyin/sprint/SprintApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/target/classes/com/keyin/sprint/DemoApplication.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,8 +98,9 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "InitinalTest",
     "ignore.virus.scanning.warn.message": "true",
+    "ignore_missing_gitignore": "true",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "last_opened_file_path": "C:/Users/pc_user/Documents/sem4midtermsprint",
+    "last_opened_file_path": "C:/Users/School/Programs/Semester 4/Algorithms and Data Structures/Sprint 1/sem4midtermsprint/et",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
