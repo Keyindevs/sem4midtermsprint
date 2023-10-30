@@ -16,60 +16,82 @@ public class APIRoutes {
 	/**
 	 * In order to store values in memory, we need to create a list of each entity.
 	 **/
-	 private static List<Airport> airports = new ArrayList<>();
-	 private static List<City> cities = new ArrayList<>();
-//	 private static List<Passenger> passengers = new ArrayList<>();
-	 private static List<Aircraft> aircraft = new ArrayList<>();
+	 private static final List<Airport> airports = new ArrayList<>();
+	 private static final List<City> cities = new ArrayList<>();
+	 private static final List<Passenger> passengers = new ArrayList<>();
+	 private static final List<Aircraft> aircraft = new ArrayList<>();
 
 
 	public static void main(String[] args) {
 		/**
 		 * Now we must add values to each list of entities.
 		 **/
-		cities.add(new City(0, "Default", "null", 0));
-		cities.add(new City(1, "New York", "NY", 8623000));
-		cities.add(new City(2, "Los Angeles", "CA", 3999759));
-		cities.add(new City(3, "St. John's", "NL", 108860));
-		cities.add(new City(4, "Toronto", "ON", 2731571));
-		cities.add(new City(5, "Montreal", "QC", 1704694));
-		cities.add(new City(6, "Vancouver", "BC", 631486));
+		// this will be our default value for an example structure.
+		cities.add(new City(getNextId(cities), "Default", "null", 0));
+		cities.add(new City(getNextId(cities), "New York", "NY", 8623000));
+		cities.add(new City(getNextId(cities), "Los Angeles", "CA", 3999759));
+		cities.add(new City(getNextId(cities), "St. John's", "NL", 108860));
+		cities.add(new City(getNextId(cities), "Toronto", "ON", 2731571));
+		cities.add(new City(getNextId(cities), "Montreal", "QC", 1704694));
+		cities.add(new City(getNextId(cities), "Vancouver", "BC", 631486));
+
 
 		//AirPorts
-		airports.add(new Airport(0, "Default", "null"));
-		airports.add(new Airport(1, "John F. Kennedy International Airport", "JFK"));
+		airports.add(new Airport(getNextId(airports), "Default", "null"));
+		cities.get(0).addAirport(airports.get(0));
+
+		airports.add(new Airport(getNextId(airports), "John F. Kennedy International Airport", "JFK"));
 		cities.get(1).addAirport(airports.get(1));
-		airports.add(new Airport(2, "Los Angeles International Airport", "LAX"));
+
+		airports.add(new Airport(getNextId(airports), "Los Angeles International Airport", "LAX"));
 		cities.get(2).addAirport(airports.get(2));
-		airports.add(new Airport(3, "St. John's International Airport", "YYT"));
+
+		airports.add(new Airport(getNextId(airports), "St. John's International Airport", "YYT"));
 		cities.get(3).addAirport(airports.get(3));
-		airports.add(new Airport(4, "Toronto Pearson International Airport", "YYZ"));
+
+		airports.add(new Airport(getNextId(airports), "Toronto Pearson International Airport", "YYZ"));
 		cities.get(4).addAirport(airports.get(4));
-		airports.add(new Airport(5, "Montreal-Pierre Elliott Trudeau International Airport", "YUL"));
+
+		airports.add(new Airport(getNextId(airports), "Montreal-Pierre Elliott Trudeau International Airport", "YUL"));
 		cities.get(5).addAirport(airports.get(5));
-		airports.add(new Airport(6, "Vancouver International Airport", "YVR"));
+
+		airports.add(new Airport(getNextId(airports), "Vancouver International Airport", "YVR"));
 		cities.get(6).addAirport(airports.get(6));
 
 
 		//Aircraft
-		aircraft.add(new Aircraft(0, "Default", "null", 0));
-		aircraft.add(new Aircraft(1, "Boeing 747", "PAL", 416));
+		aircraft.add(new Aircraft(getNextId(aircraft), "Default", "null", 0));
+		airports.get(0).setOnPremisePlanes(aircraft.get(0));
+
+		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 747", "PAL", 416));
 		airports.get(3).setOnPremisePlanes(aircraft.get(1));
 
-		aircraft.add(new Aircraft(2, "Airbus A380", "PAL", 853));
+		aircraft.add(new Aircraft(getNextId(aircraft), "Airbus A380", "PAL", 853));
 		airports.get(3).setOnPremisePlanes(aircraft.get(2));
-		aircraft.add(new Aircraft(3, "Boeing 737", "PAL", 215));
+
+		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 737", "PAL", 215));
 		airports.get(1).setOnPremisePlanes(aircraft.get(3));
-		aircraft.add(new Aircraft(4, "Airbus A330", "PAL", 335));
+
+		aircraft.add(new Aircraft(getNextId(aircraft), "Airbus A330", "PAL", 335));
 		airports.get(4).setOnPremisePlanes(aircraft.get(4));
-		aircraft.add(new Aircraft(5, "Boeing 777", "PAL", 550));
+
+		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 777", "PAL", 550));
 		airports.get(1).setOnPremisePlanes(aircraft.get(5));
-		aircraft.add(new Aircraft(6, "Airbus A350", "PAL", 366));
+
+		aircraft.add(new Aircraft(getNextId(aircraft), "Airbus A350", "PAL", 366));
 		airports.get(1).setOnPremisePlanes(aircraft.get(6));
 
+
 		//Passengers
+		passengers.add(new Passenger("Example", "Default", "null", getNextId(passengers)));
+		aircraft.get(0).addPassenger(passengers.get(0));
 
 
 		SpringApplication.run(APIRoutes.class, args);
+	}
+
+	public static int getNextId(List<?> list) {
+		return list.size();
 	}
 
 /**
