@@ -14,9 +14,6 @@ import java.util.List;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @RestController
 public class APIRoutes {
-	/**
-	 * In order to store values in memory, we need to create a list of each entity.
-	 **/
 	 private static final List<Airport> airports = new ArrayList<>();
 	 private static final List<City> cities = new ArrayList<>();
 	 private static final List<Passenger> passengers = new ArrayList<>();
@@ -133,13 +130,13 @@ public class APIRoutes {
 	}
 
 	@GetMapping("/passengers")
-	public String passengers() {
-		return "This is a list of passengers!";
+	public List<Passenger> passengers() {
+		return passengers;
 	}
 
 	@GetMapping("/passenger")
-	public String passenger(@RequestParam(value = "id", defaultValue = "0") String id) {
-		return String.format("This is passenger %s!", id);
+	public Passenger passenger(@RequestParam(value = "id", defaultValue = "0") int id) {
+		return passengers.get(id);
 	}
 
 	@PostMapping("/passenger")
