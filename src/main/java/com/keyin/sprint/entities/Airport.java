@@ -68,7 +68,4 @@ public class Airport {
         this.exPassengers = exPassengers;
     }
 
-    public void addAircraft(Aircraft aircraft) {
-        this.onPremisePlanes.add(aircraft);
-    }
 }
