@@ -23,10 +23,7 @@ public class APIRoutes {
 
 
 	public static void main(String[] args) {
-		/**
-		 * Now we must add values to each list of entities.
-		 **/
-		// this will be our default value for an example structure.
+        // cities
 		cities.add(new City(getNextId(cities), "Default", "null", 0));
 		cities.add(new City(getNextId(cities), "New York", "NY", 8623000));
 		cities.add(new City(getNextId(cities), "Los Angeles", "CA", 3999759));
@@ -85,8 +82,26 @@ public class APIRoutes {
 		//Passengers
 		passengers.add(new Passenger("Example", "Default", "null", getNextId(passengers)));
 		aircraft.get(0).addPassenger(passengers.get(0));
+		cities.get(0).addHabitant(passengers.get(0));
+
+		passengers.add(new Passenger("John", "Smith", "St. Johns", getNextId(passengers)));
+		airports.get(3).getOnPremisePassengers().add(passengers.get(1));
+		cities.get(3).addHabitant(passengers.get(1));
+
+		passengers.add(new Passenger("Jane", "Doe", "Toronto", getNextId(passengers)));
+		airports.get(4).getOnPremisePassengers().add(passengers.get(2));
+		cities.get(4).addHabitant(passengers.get(2));
+
+		passengers.add(new Passenger("John", "Doe", "Montreal", getNextId(passengers)));
+		airports.get(5).getOnPremisePassengers().add(passengers.get(3));
+		cities.get(5).addHabitant(passengers.get(3));
+
+		passengers.add(new Passenger("Jane", "Smith", "Vancouver", getNextId(passengers)));
+		airports.get(6).getOnPremisePassengers().add(passengers.get(4));
+		cities.get(6).addHabitant(passengers.get(4));
 
 
+		// Call our routes to actually run the API.
 		SpringApplication.run(APIRoutes.class, args);
 	}
 
@@ -111,6 +126,7 @@ public class APIRoutes {
 		return String.format("Hello %s!", name);
 	}
 
+	// nothing but API mappings past this point.
 	@GetMapping("/cities")
 	public List<City> cities() {
 		return cities;
@@ -143,7 +159,17 @@ public class APIRoutes {
 
 	@GetMapping("/")
 	public String home() {
-		return "Welcome to the Sprint API!";
+		return """
+Welcome to the Sprint API!
+Use the following endpoints to access the data:
+	/cities
+	/city?id=(int)
+	/city/airports?id=(int)
+	/airport/aircraft?id=(int)
+	/passengers
+	/passenger?id=(int)
+	/
+""";
 	}
 
 }
