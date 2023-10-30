@@ -17,22 +17,22 @@ public class AirportTest {
 
     @Before
     public void setUp() {
-        airport = new Airport(1, "International Airport", "ITP");
+        airport = new Airport(0, "Test", "TST");
     }
 
     @Test
     public void testAirportId() {
-        assertEquals(1, airport.getId());
+        assertEquals(0, airport.getId());
     }
 
     @Test
     public void testAirportName() {
-        assertEquals("International Airport", airport.getName());
+        assertEquals("Test", airport.getName());
     }
 
     @Test
     public void testAirportCode() {
-        assertEquals("ITP", airport.getCode());
+        assertEquals("TST", airport.getCode());
     }
 
     @Test

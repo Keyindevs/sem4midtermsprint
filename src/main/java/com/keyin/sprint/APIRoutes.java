@@ -79,8 +79,6 @@ public class APIRoutes {
 		cities.get(1).addHabitant(passengers.get(2));
 
 
-
-		// Call our routes to actually run the API.
 		SpringApplication.run(APIRoutes.class, args);
 	}
 
@@ -90,22 +88,10 @@ public class APIRoutes {
 
 /**
   * This is a basic call to our springboot API.
-  * 	This is a GET request to the /hello endpoint.
-  * 	The @RequestParam annotation is used to extract query parameters from the request.
-  * 	The @RequestParam annotation has two attributes:
-  * 		1. value: the name of the request parameter
-  * 		2. defaultValue: the default value to use as a fallback when the request parameter is not provided
- * 	Furthermore:
  * 		The default value for a query request is 0, if we do not provide a value for the id parameter
  * 		it will default to 0.
  * 	    We will leave the item with id 0 as a placeholder for the item that does not exist.
  **/
-	@GetMapping("/hello")
-	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return String.format("Hello %s!", name);
-	}
-
-	// nothing but API mappings past this point.
 	@GetMapping("/cities")
 	public List<City> cities() {
 		return cities;
@@ -116,9 +102,22 @@ public class APIRoutes {
 		return cities.get(id);
 	}
 
+	@PostMapping("/city")
+	public void addCity(@RequestParam(value = "name", defaultValue = "Default") String name,
+						@RequestParam(value = "code", defaultValue = "null") String code,
+						@RequestParam(value = "population", defaultValue = "0") int population) {
+		cities.add(new City(getNextId(cities), name, code, population));
+	}
+
 	@GetMapping("/city/airports")
 	public ArrayList<Airport> airports(@RequestParam(value = "id", defaultValue = "0") int id) {
 		return cities.get(id).getAirports();
+	}
+
+	@PostMapping("/city/airports")
+	public void addAirport(@RequestParam(value = "name", defaultValue = "Default") String name,
+						   @RequestParam(value = "code", defaultValue = "null") String code) {
+		airports.add(new Airport(getNextId(airports), name, code));
 	}
 
 	@GetMapping("/airport/aircraft")
@@ -154,15 +153,19 @@ public class APIRoutes {
 	@GetMapping("/")
 	public String home() {
 		return """
-Welcome to the Sprint API! \n
-Use the following endpoints to access the data: \n
-	/cities \n
-	/city?id=(int) \n
-	/city/airports?id=(int) \n
-	/airport/aircraft?id=(int) \n
-	/passengers\n
-	/passenger?id=(int) \n
-	/
+Welcome to the Sprint API!
+Use the following endpoints to access the data:
+GET /cities
+GET /city?id={id}
+POST /city?name={name}&code={code}&population={population}
+GET /city/airports?id={id}
+POST /city/airports?name={name}&code={code}
+GET /airport/aircraft?id={id}
+POST /airport/aircraft?name={name}&code={code}&capacity={capacity}
+GET /passengers
+GET /passenger?id={id}
+POST /passenger?firstName={firstName}&lastName={lastName}&homeTown={homeTown}
+/
 """;
 	}
 
