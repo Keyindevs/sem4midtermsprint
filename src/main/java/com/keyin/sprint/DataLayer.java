@@ -82,10 +82,10 @@ public class DataLayer {
                 for (Flight flight :APIRoutes.getFlights()) {
                     System.out.println(flight.getOrigin());
                    if (flight.getOrigin().equals(data[1])) {
-                       airports.get(i).setFlightsOut(flight);
+                       airports.get(i).addFlightOut(flight);
                    }
                    if (flight.getDestination().equals(data[1])) {
-                       airports.get(i).setFlightsIn(flight);
+                       airports.get(i).addFlightIn(flight);
                    }
                 }
             }
@@ -127,7 +127,7 @@ public class DataLayer {
             String[] lines = ReadFile("Flights.txt").split("\n");
             for (String line : lines) {
                 String[] data = line.split(",");
-                flights.add(new Flight(data[0], data[1],data[2], data[3]));
+                flights.add(new Flight(data[0], data[1], data[2], data[3]));
             }
         }
         catch (Exception e) {

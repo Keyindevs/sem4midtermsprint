@@ -75,11 +75,11 @@ public class Airport {
         return city;
     }
 
-    public void setFlightsIn(Flight flight) {
+    public void addFlightIn(Flight flight) {
         this.flightsIn.add(flight);
     }
 
-    public void setFlightsOut(Flight flight) {
+    public void addFlightOut(Flight flight) {
         this.flightsOut.add(flight);
     }
 
