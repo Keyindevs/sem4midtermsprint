@@ -36,7 +36,7 @@ public class DataLayer {
         SaveFile("Airports.txt", tmp.toString());
     }
     
-    public void SaveAircraft(List<Aircraft> aircraft) {
+    public static void SaveAircraft(List<Aircraft> aircraft) {
         StringBuilder tmp = new StringBuilder();
         for (Aircraft plane : aircraft) {
             tmp.append(plane.getType()).append(",").append(plane.getAirlineName()).append(",").append(plane.getNumberOfPassengers()).append(",").append(plane.getAirport()).append("\n");

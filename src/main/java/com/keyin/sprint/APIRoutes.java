@@ -85,9 +85,28 @@ public class APIRoutes {
 	public City city(@RequestParam(value = "name", defaultValue = "Default") String name) {
 		return getCityByName(name);
 	}
+
+	@PostMapping("/city")
+	public void city(@RequestParam(value = "name", defaultValue = "null") String name,
+					 @RequestParam(value = "state", defaultValue = "null") String state,
+					 @RequestParam(value = "population", defaultValue = "0") int population) {
+		cities.add(new City(cities.size(), name, state, population));
+		DataLayer.SaveCities(cities);
+		DataLayer.ReadCities();
+	}
+
 	@GetMapping("/city/airports")
 	public ArrayList<Airport> airports(@RequestParam(value = "name", defaultValue = "Default") String name) {
 		return getCityByName(name).getAirports();
+	}
+
+	@PostMapping("/airport")
+	public void airport(@RequestParam(value = "name", defaultValue = "null") String name,
+						@RequestParam(value = "city", defaultValue = "null") String city,
+						@RequestParam(value = "code", defaultValue = "null") String code) {
+		airports.add(new Airport(name, city, code));
+		DataLayer.SaveAirports(airports);
+		DataLayer.ReadAirports();
 	}
 
 	@GetMapping("/airports")
@@ -98,6 +117,16 @@ public class APIRoutes {
 	@GetMapping("/airport/aircraft")
 	public List<Aircraft> airport(@RequestParam(value = "code", defaultValue = "null") String code) {
 		return getAirportByCode(code).getOnPremisePlanes();
+	}
+
+	@PostMapping("/aircraft")
+	public void aircraft(@RequestParam(value = "type", defaultValue = "null") String type,
+						 @RequestParam(value = "airlineName", defaultValue = "null") String airlineName,
+						 @RequestParam(value = "numberOfPassengers", defaultValue = "0") int numberOfPassengers,
+						 @RequestParam(value = "airport", defaultValue = "null") String airport,@RequestParam(value = "id", defaultValue = "null") String id) {
+		aircraft.add(new Aircraft(id, type, airlineName, numberOfPassengers, airport));
+		DataLayer.SaveAircraft(aircraft);
+		DataLayer.ReadAircraft();
 	}
 
 	@GetMapping("/flights")
