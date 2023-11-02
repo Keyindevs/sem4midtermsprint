@@ -7,8 +7,7 @@ public class City {
     private String name;
     private String state;
     private int population;
-
-    private final ArrayList<Airport> airports;
+    public ArrayList<Airport> airports;
     private final ArrayList<Passenger> habitants = new ArrayList<>();
 
     public City(int id, String name, String state, int population, ArrayList<Airport> airports) {

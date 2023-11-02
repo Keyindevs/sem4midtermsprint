@@ -14,119 +14,124 @@ import java.util.List;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @RestController
 public class APIRoutes {
-	 private static final List<Airport> airports = new ArrayList<>();
-	 private static final List<City> cities = new ArrayList<>();
-	 private static final List<Passenger> passengers = new ArrayList<>();
-	 static final List<Aircraft> aircraft = new ArrayList<>();
 
+	 private static  List<Airport> airports;
+	 private static List<City> cities;
+	 private static  List<Passenger> passengers;
+	 private static  List<Aircraft> aircraft;
+	 private static List<Flight> flights = new ArrayList<>();
 
-	public static void main(String[] args) {
-        // cities
-		cities.add(new City(getNextId(cities), "Default", "null", 0));
-		cities.add(new City(getNextId(cities), "New York", "NY", 8623000));
-		cities.add(new City(getNextId(cities), "St. John's", "NL", 108860));
+	public static List<Airport> getAirports() {
+		return airports;
+	}
 
+	public static List<Passenger> getPassengers() {
+		return passengers;
+	}
 
-		//AirPorts
-		airports.add(new Airport(getNextId(airports), "Default", "null"));
-		cities.get(0).addAirport(airports.get(0));
+	public static List<Aircraft> getAircraft() {
+		return aircraft;
+	}
 
-		airports.add(new Airport(getNextId(airports), "John F. Kennedy International Airport", "JFK"));
-		cities.get(1).addAirport(airports.get(1));
+	public static List<Flight> getFlights() {
+		return flights;
+	}
 
-		airports.add(new Airport(getNextId(airports), "St. John's International Airport", "YYT"));
-		cities.get(2).addAirport(airports.get(2));
+	public static City getCityByName(String name){
+		City tmp = null;
+		for (City city : cities){
+			if (city.getName().equals(name)){
+				tmp = city;
+			}
+		}
+		return tmp;
+	}
 
+	public static Airport getAirportByCode(String code){
+		Airport tmp = null;
+		for (Airport airport : airports){
+			if (airport.getCode().equals(code)){
+				tmp = airport;
+			}
+		}
+		return tmp;
+	}
 
+	private static void init() {
+		passengers = DataLayer.ReadPassengers();
+		aircraft = DataLayer.ReadAircraft();
+		flights = DataLayer.ReadFlights();
+		airports = DataLayer.ReadAirports();
+		cities = DataLayer.ReadCities();
+	}
 
-		//Aircraft
-		aircraft.add(new Aircraft(getNextId(aircraft), "Default", "null", 0));
-		airports.get(0).setOnPremisePlanes(aircraft.get(0));
-
-		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 747", "PAL", 416));
-		airports.get(2).setOnPremisePlanes(aircraft.get(1));
-
-		aircraft.add(new Aircraft(getNextId(aircraft), "Airbus A380", "PAL", 853));
-		airports.get(2).setOnPremisePlanes(aircraft.get(2));
-
-		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 737", "PAL", 215));
-		airports.get(1).setOnPremisePlanes(aircraft.get(3));
-
-		aircraft.add(new Aircraft(getNextId(aircraft), "Airbus A330", "PAL", 335));
-		airports.get(1).setOnPremisePlanes(aircraft.get(4));
-
-		aircraft.add(new Aircraft(getNextId(aircraft), "Boeing 777", "PAL", 550));
-		airports.get(1).setOnPremisePlanes(aircraft.get(5));
-
-		aircraft.add(new Aircraft(getNextId(aircraft), "Airbus A350", "PAL", 366));
-		airports.get(1).setOnPremisePlanes(aircraft.get(6));
-
-
-		//Passengers
-		passengers.add(new Passenger("Example", "Default", "null", getNextId(passengers)));
-		aircraft.get(0).addPassenger(passengers.get(0));
-		cities.get(0).addHabitant(passengers.get(0));
-
-		passengers.add(new Passenger("John", "Doe", "St. Johns", getNextId(passengers)));
-		airports.get(2).getOnPremisePassengers().add(passengers.get(1));
-		cities.get(2).addHabitant(passengers.get(1));
-
-		passengers.add(new Passenger("Jane", "Doe", "New York", getNextId(passengers)));
-		airports.get(1).getOnPremisePassengers().add(passengers.get(2));
-		cities.get(1).addHabitant(passengers.get(2));
-
-
+	public static void main(String[] args){
+		init();
 		SpringApplication.run(APIRoutes.class, args);
 	}
 
-	public static int getNextId(List<?> list) {
-		return list.size();
-	}
-
-/**
-  * This is a basic call to our springboot API.
- * 		The default value for a query request is 0, if we do not provide a value for the id parameter
- * 		it will default to 0.
- * 	    We will leave the item with id 0 as a placeholder for the item that does not exist.
- **/
+	/**
+	 * This is our map to the springboot API.
+	 * 		The default value for a query request is 0, if we do not provide a value for the id parameter
+	 * 		it will default to 0.
+	 * 	    We will leave the item with id 0 as a placeholder for the item that does not exist.
+	 **/
 	@GetMapping("/cities")
 	public List<City> cities() {
 		return cities;
     }
 
 	@GetMapping("/city")
-	public City city(@RequestParam(value = "id", defaultValue = "0") int id) {
-		return cities.get(id);
+	public City city(@RequestParam(value = "name", defaultValue = "Default") String name) {
+		return getCityByName(name);
 	}
 
 	@PostMapping("/city")
-	public void addCity(@RequestParam(value = "name", defaultValue = "Default") String name,
-						@RequestParam(value = "code", defaultValue = "null") String code,
-						@RequestParam(value = "population", defaultValue = "0") int population) {
-		cities.add(new City(getNextId(cities), name, code, population));
+	public void city(@RequestParam(value = "name", defaultValue = "null") String name,
+					 @RequestParam(value = "state", defaultValue = "null") String state,
+					 @RequestParam(value = "population", defaultValue = "0") int population) {
+		cities.add(new City(cities.size(), name, state, population));
+		DataLayer.SaveCities(cities);
+		DataLayer.ReadCities();
 	}
 
 	@GetMapping("/city/airports")
-	public ArrayList<Airport> airports(@RequestParam(value = "id", defaultValue = "0") int id) {
-		return cities.get(id).getAirports();
+	public ArrayList<Airport> airports(@RequestParam(value = "name", defaultValue = "Default") String name) {
+		return getCityByName(name).getAirports();
 	}
 
-	@PostMapping("/city/airports")
-	public void addAirport(@RequestParam(value = "name", defaultValue = "Default") String name,
-						   @RequestParam(value = "code", defaultValue = "null") String code) {
-		airports.add(new Airport(getNextId(airports), name, code));
+	@PostMapping("/airport")
+	public void airport(@RequestParam(value = "name", defaultValue = "null") String name,
+						@RequestParam(value = "city", defaultValue = "null") String city,
+						@RequestParam(value = "code", defaultValue = "null") String code) {
+		airports.add(new Airport(name, city, code));
+		DataLayer.SaveAirports(airports);
+		DataLayer.ReadAirports();
+	}
+
+	@GetMapping("/airports")
+	public List<Airport> airports() {
+		return airports;
 	}
 
 	@GetMapping("/airport/aircraft")
-	public List<Aircraft> airport(@RequestParam(value = "id", defaultValue = "0") int id) {
-		return airports.get(id).getOnPremisePlanes();
+	public List<Aircraft> airport(@RequestParam(value = "code", defaultValue = "null") String code) {
+		return getAirportByCode(code).getOnPremisePlanes();
 	}
 
-	@PostMapping("/airport/aircraft")
-	public void addAircraft(@RequestParam(value = "name", defaultValue = "Default") String name,
-							@RequestParam(value = "code", defaultValue = "null") String code,
-							@RequestParam(value = "capacity", defaultValue = "null") int capacity) {
-		aircraft.add(new Aircraft(getNextId(aircraft), name, code, capacity));
+	@PostMapping("/aircraft")
+	public void aircraft(@RequestParam(value = "type", defaultValue = "null") String type,
+						 @RequestParam(value = "airlineName", defaultValue = "null") String airlineName,
+						 @RequestParam(value = "numberOfPassengers", defaultValue = "0") int numberOfPassengers,
+						 @RequestParam(value = "airport", defaultValue = "null") String airport,@RequestParam(value = "id", defaultValue = "null") String id) {
+		aircraft.add(new Aircraft(id, type, airlineName, numberOfPassengers, airport));
+		DataLayer.SaveAircraft(aircraft);
+		DataLayer.ReadAircraft();
+	}
+
+	@GetMapping("/flights")
+	public List<Flight> flights() {
+		return flights;
 	}
 
 	@GetMapping("/passengers")
@@ -140,30 +145,17 @@ public class APIRoutes {
 	}
 
 	@PostMapping("/passenger")
-	public void addPassenger(@RequestParam(value = "firstName", defaultValue = "John") String firstName,
-							 @RequestParam(value = "lastName", defaultValue = "Doe") String lastName,
-							 @RequestParam(value = "homeTown", defaultValue = "default") String homeTown) {
-		passengers.add(new Passenger(firstName, lastName, homeTown, getNextId(passengers)));
+	public void passenger(@RequestParam(value = "firstName", defaultValue = "null") String firstName,
+						  @RequestParam(value = "lastName", defaultValue = "null") String lastName,
+						  @RequestParam(value = "homeTown", defaultValue = "null") String homeTown) {
+		passengers.add(new Passenger(firstName, lastName, homeTown));
+		DataLayer.SavePassengers(passengers());
+		DataLayer.ReadPassengers();
 	}
-
 
 	@GetMapping("/")
 	public String home() {
-		return """
-Welcome to the Sprint API!
-Use the following endpoints to access the data:
-GET /cities
-GET /city?id={id}
-POST /city?name={name}&code={code}&population={population}
-GET /city/airports?id={id}
-POST /city/airports?name={name}&code={code}
-GET /airport/aircraft?id={id}
-POST /airport/aircraft?name={name}&code={code}&capacity={capacity}
-GET /passengers
-GET /passenger?id={id}
-POST /passenger?firstName={firstName}&lastName={lastName}&homeTown={homeTown}
-GET /
-""";
+		return null;
 	}
 
 }

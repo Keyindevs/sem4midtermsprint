@@ -1,0 +1,3 @@
+Default,null,0
+New York,NY,8623000
+St. John's,NL,106172
