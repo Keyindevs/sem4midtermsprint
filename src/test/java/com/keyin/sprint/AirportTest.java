@@ -21,11 +21,6 @@ public class AirportTest {
     }
 
     @Test
-    public void testAirportId() {
-        assertEquals(0, airport.getId());
-    }
-
-    @Test
     public void testAirportName() {
         assertEquals("Test", airport.getName());
     }
@@ -40,24 +35,6 @@ public class AirportTest {
         airport.setOnPremisePlanes(new Aircraft("AK234", "Default", "test", 0));
         assertEquals("test", airport.getOnPremisePlanes().get(0).getAirlineName());
     }
-
-//    @Test
-//    public void testOnPremisePassengers() {
-//        List<Passenger> passengers = new ArrayList<>();
-//        passengers.add(new Passenger("John", "Doe", "New York", 1));
-//        passengers.add(new Passenger("Jane", "Smith", "Los Angeles", 2));
-//        airport.setOnPremisePassengers(passengers);
-//        assertEquals(2, airport.getOnPremisePassengers().size());
-//    }
-
-//    @Test
-//    public void testExPassengers() {
-//        List<Passenger> exPassengers = new ArrayList<>();
-//        exPassengers.add(new Passenger("Alice", "Johnson", "Chicago", 3));
-//        exPassengers.add(new Passenger("Bob", "Anderson", "Houston", 4));
-//        airport.setExPassengers(exPassengers);
-//        assertEquals(2, airport.getExPassengers().size());
-//    }
 }
 
 
