@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataLayer {
-    // WriteData Methods
-    private static void WriteFile(String fileName, String data) {
+
+    private static void SaveFile(String fileName, String data) {
         try {
             FileWriter writer = new FileWriter("src/main/resources/"+fileName);
             writer.write(data);
@@ -19,6 +19,39 @@ public class DataLayer {
             System.out.println(e.getMessage());
         }
     }
+
+    public static void SaveCities(List<City> cities) {
+        StringBuilder tmp = new StringBuilder();
+        for (City city : cities) {
+            tmp.append(city.getName()).append(",").append(city.getState()).append(",").append(city.getPopulation()).append("\n");
+        }
+        SaveFile("Cities.txt", tmp.toString());
+    }
+
+    public static void SaveAirports(List<Airport> airports) {
+        StringBuilder tmp = new StringBuilder();
+        for (Airport airport : airports) {
+            tmp.append(airport.getName()).append(",").append(airport.getCity()).append(",").append(airport.getName()).append(airport.getCode()).append("\n");
+        }
+        SaveFile("Airports.txt", tmp.toString());
+    }
+    
+    public void SaveAircraft(List<Aircraft> aircraft) {
+        StringBuilder tmp = new StringBuilder();
+        for (Aircraft plane : aircraft) {
+            tmp.append(plane.getType()).append(",").append(plane.getAirlineName()).append(",").append(plane.getNumberOfPassengers()).append(",").append(plane.getAirport()).append("\n");
+        }
+        SaveFile("Aircraft.txt", tmp.toString());
+    }
+
+    public static void SavePassengers(List<Passenger> passengers) {
+        StringBuilder tmp = new StringBuilder();
+        for (Passenger passenger : passengers) {
+            tmp.append(passenger.getFirstName()).append(",").append(passenger.getLastName()).append(",").append(passenger.getHomeTown()).append(",").append(passenger.getFlights()).append("\n");
+        }
+        SaveFile("Passengers.txt", tmp.toString());
+    }
+
 
     private static String ReadFile(String fileName) throws IOException {
         StringBuilder tmp = new StringBuilder();
@@ -80,7 +113,6 @@ public class DataLayer {
                 }
 
                 for (Flight flight :APIRoutes.getFlights()) {
-                    System.out.println(flight.getOrigin());
                    if (flight.getOrigin().equals(data[1])) {
                        airports.get(i).addFlightOut(flight);
                    }
@@ -100,7 +132,7 @@ public class DataLayer {
             String[] lines = ReadFile("Passengers.txt").split("\n");
             for (int i = 0; i < lines.length; i++) {
                 String[] data = lines[i].split(",");
-                passengers.add(new Passenger(data[0], data[1], data[2], i, data[3]));
+                passengers.add(new Passenger(data[0], data[1], data[2]));
             }
         }   catch (IOException e) {
             System.out.println(e.getMessage());

@@ -5,15 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Airport {
-    private int id;
     private String name;
     private String code;
-    private String city;
-    private List<Aircraft> onPremisePlanes = new ArrayList<>();;
+    private final String city;
+    private final List<Aircraft> onPremisePlanes = new ArrayList<>();;
     private List<Passenger> onPremisePassengers = new ArrayList<>();
-    private List<Passenger> exPassengers = new ArrayList<>();;
-    private List<Flight> flightsIn = new ArrayList<>();
-    private List<Flight> flightsOut = new ArrayList<>();
+    private final List<Flight> flightsIn = new ArrayList<>();
+    private final List<Flight> flightsOut = new ArrayList<>();
 
     public Airport(String name, String code, String City) {
         this.name = name;
@@ -22,14 +20,6 @@ public class Airport {
     }
 
     // Getters and setters for the fields
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -63,14 +53,6 @@ public class Airport {
         this.onPremisePassengers = onPremisePassengers;
     }
 
-    public List<Passenger> getExPassengers() {
-        return exPassengers;
-    }
-
-    public void setExPassengers(List<Passenger> exPassengers) {
-        this.exPassengers = exPassengers;
-    }
-
     public String getCity() {
         return city;
     }
@@ -79,8 +61,16 @@ public class Airport {
         this.flightsIn.add(flight);
     }
 
+    public List<Flight> getFlightsIn() {
+        return flightsIn;
+    }
+
     public void addFlightOut(Flight flight) {
         this.flightsOut.add(flight);
+    }
+
+    public List<Flight> getFlightsOut() {
+        return flightsOut;
     }
 
 }

@@ -1,38 +1,29 @@
 package com.keyin.sprint.entities;
 
+import java.util.List;
+
 public class Passenger {
     // need attributes of firstname last name hometown and an id
-    private String firstName;
-    private String lastName;
+    private final String firstName;
+    private final String lastName;
     private String homeTown;
-    private int id;
-    private String flight;
 
-    public Passenger(String firstName, String lastName, String homeTown, int id,String flight) {
+    private List<Flight> flights;
+
+    public Passenger(String firstName, String lastName, String homeTown) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.homeTown = homeTown;
-        this.id = id;
-        this.flight = flight;
+
     }
 
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-
     public String getLastName() {
         return lastName;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
 
     public String getHomeTown() {
         return homeTown;
@@ -42,21 +33,12 @@ public class Passenger {
         this.homeTown = homeTown;
     }
 
-
-    public int getId() {
-        return id;
+    public void setFlight(Flight flight) {
+    	this.flights.add(flight);
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setFlight(String flight) {
-    	this.flight = flight;
-    }
-
-    public String getFlight() {
-    	return flight;
+    public List<Flight> getFlights() {
+    	return flights;
     }
 
 }
