@@ -17,7 +17,7 @@ public class AirportTest {
 
     @Before
     public void setUp() {
-        airport = new Airport(0, "Test", "TST","TestTST");
+        airport = new Airport("Test", "TST","TestTST");
     }
 
     @Test

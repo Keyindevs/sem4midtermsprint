@@ -9,12 +9,13 @@ public class Airport {
     private String name;
     private String code;
     private String city;
-    private final List<Aircraft> onPremisePlanes = new ArrayList<>();;
+    private List<Aircraft> onPremisePlanes = new ArrayList<>();;
     private List<Passenger> onPremisePassengers = new ArrayList<>();
     private List<Passenger> exPassengers = new ArrayList<>();;
+    private List<Flight> flightsIn = new ArrayList<>();
+    private List<Flight> flightsOut = new ArrayList<>();
 
-    public Airport(int id, String name, String code, String City) {
-        this.id = id;
+    public Airport(String name, String code, String City) {
         this.name = name;
         this.code = code;
         this.city = City;
@@ -74,8 +75,12 @@ public class Airport {
         return city;
     }
 
-    public void setCity(String City) {
-        this.city = City;
+    public void setFlightsIn(Flight flight) {
+        this.flightsIn.add(flight);
+    }
+
+    public void setFlightsOut(Flight flight) {
+        this.flightsOut.add(flight);
     }
 
 }

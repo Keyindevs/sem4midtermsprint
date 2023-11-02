@@ -69,7 +69,7 @@ public class DataLayer {
             String[] lines = ReadFile("Airports.txt").split("\n");
             for (int i = 0; i < lines.length; i++) {
                 String[] data = lines[i].split(",");
-                airports.add(new Airport(i, data[0], data[1], data[2]));
+                airports.add(new Airport(data[0], data[1], data[2]));
 
                 // get each aircraft from the list of aircraft
                 for (Aircraft aircraft :APIRoutes.getAircraft()) {
@@ -77,6 +77,16 @@ public class DataLayer {
                     if (aircraft.getAirport().equals(data[1])) {
                         airports.get(i).setOnPremisePlanes(aircraft);
                     }
+                }
+
+                for (Flight flight :APIRoutes.getFlights()) {
+                    System.out.println(flight.getOrigin());
+                   if (flight.getOrigin().equals(data[1])) {
+                       airports.get(i).setFlightsOut(flight);
+                   }
+                   if (flight.getDestination().equals(data[1])) {
+                       airports.get(i).setFlightsIn(flight);
+                   }
                 }
             }
         }   catch (IOException e) {
@@ -111,14 +121,13 @@ public class DataLayer {
         }
         return aircraft;
     }
-
     public static List<Flight> ReadFlights() {
         List<Flight> flights = new ArrayList<>();
         try {
             String[] lines = ReadFile("Flights.txt").split("\n");
             for (String line : lines) {
                 String[] data = line.split(",");
-                flights.add(new Flight(APIRoutes.getAirportByCode(data[0]), APIRoutes.getAirportByCode(data[1]),APIRoutes.getAircraftByID(data[2]), data[3]));
+                flights.add(new Flight(data[0], data[1],data[2], data[3]));
             }
         }
         catch (Exception e) {
