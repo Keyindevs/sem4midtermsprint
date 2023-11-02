@@ -1,3 +1,4 @@
 Default,null,null,null
-John,Doe,St. John's
-Jane,Doe,St. John's
+John,Doe,St. John's,null
+Jane,Doe,St. John's,null
+Alex,Singleton,St. John's,null
