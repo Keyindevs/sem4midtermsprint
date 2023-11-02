@@ -70,12 +70,12 @@ public class APIRoutes {
 		SpringApplication.run(APIRoutes.class, args);
 	}
 
-/**
- * This is our map to the springboot API.
- * 		The default value for a query request is 0, if we do not provide a value for the id parameter
- * 		it will default to 0.
- * 	    We will leave the item with id 0 as a placeholder for the item that does not exist.
- **/
+	/**
+	 * This is our map to the springboot API.
+	 * 		The default value for a query request is 0, if we do not provide a value for the id parameter
+	 * 		it will default to 0.
+	 * 	    We will leave the item with id 0 as a placeholder for the item that does not exist.
+	 **/
 	@GetMapping("/cities")
 	public List<City> cities() {
 		return cities;
