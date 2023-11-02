@@ -8,14 +8,16 @@ public class Airport {
     private int id;
     private String name;
     private String code;
+    private String city;
     private final List<Aircraft> onPremisePlanes = new ArrayList<>();;
     private List<Passenger> onPremisePassengers = new ArrayList<>();
     private List<Passenger> exPassengers = new ArrayList<>();;
 
-    public Airport(int id, String name, String code) {
+    public Airport(int id, String name, String code, String City) {
         this.id = id;
         this.name = name;
         this.code = code;
+        this.city = City;
     }
 
     // Getters and setters for the fields
@@ -66,6 +68,14 @@ public class Airport {
 
     public void setExPassengers(List<Passenger> exPassengers) {
         this.exPassengers = exPassengers;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String City) {
+        this.city = City;
     }
 
 }

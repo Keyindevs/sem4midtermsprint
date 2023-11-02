@@ -10,11 +10,23 @@ public class Aircraft {
     private final List<Passenger> BoardedPassengers = new ArrayList<>();
     private int numberOfPassengers;
 
+    private String airport;
+
+    public Aircraft(int id,String type, String airlineName, int numberOfPassengers, String airport) {
+        this.id = id;
+        this.type = type;
+        this.airlineName = airlineName;
+        this.numberOfPassengers = numberOfPassengers;
+        this.airport = airport;
+
+    }
+
     public Aircraft(int id, String type, String airlineName, int numberOfPassengers) {
         this.id = id;
         this.type = type;
         this.airlineName = airlineName;
         this.numberOfPassengers = numberOfPassengers;
+        this.airport = null;
     }
 
 
@@ -58,5 +70,13 @@ public class Aircraft {
 
     public List<Passenger> getBoardedPassengers() {
         return BoardedPassengers;
+    }
+
+    public void setAirport(String airport) {
+    	this.airport = airport;
+    }
+
+    public String getAirport() {
+    	return airport;
     }
 }

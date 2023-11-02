@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PassengerTest {
     @Test
     public void testPassengerAttributes() {
-        Passenger passenger = new Passenger("John", "Doe", "New York", 12345);
+        Passenger passenger = new Passenger("John", "Doe", "New York", 12345,"null");
 
         assertEquals("John", passenger.getFirstName());
         assertEquals("Doe", passenger.getLastName());

@@ -6,12 +6,14 @@ public class Passenger {
     private String lastName;
     private String homeTown;
     private int id;
+    private String flight;
 
-    public Passenger(String firstName, String lastName, String homeTown, int id) {
+    public Passenger(String firstName, String lastName, String homeTown, int id,String flight) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.homeTown = homeTown;
         this.id = id;
+        this.flight = flight;
     }
 
     public String getFirstName() {
@@ -48,4 +50,13 @@ public class Passenger {
     public void setId(int id) {
         this.id = id;
     }
+
+    public void setFlight(String flight) {
+    	this.flight = flight;
+    }
+
+    public String getFlight() {
+    	return flight;
+    }
+
 }
