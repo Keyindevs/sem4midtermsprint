@@ -25,7 +25,8 @@ public class APIRoutes {
 
 
 	public static void main(String[] args){
-		init();
+		cities = DataLayer.ReadCities();
+
 
 //		airports.add(new Airport(getNextId(airports), "Default", "null"));
 //		cities.get(0).addAirport(airports.get(0));
@@ -78,16 +79,6 @@ public class APIRoutes {
 		return list.size();
 	}
 
-	public static void init(){
-		try {
-//		airports = DataLayer.ReadAirports();
-			cities = DataLayer.ReadCities();
-//		passengers = DataLayer.ReadPassengers();
-//		aircraft = DataLayer.ReadAircraft();
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-		}
-	}
 
 /**
   * This is a basic call to our springboot API.

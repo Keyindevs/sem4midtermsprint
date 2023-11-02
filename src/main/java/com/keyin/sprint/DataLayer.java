@@ -2,26 +2,24 @@ package com.keyin.sprint;
 
 import com.keyin.sprint.entities.Airport;
 import com.keyin.sprint.entities.City;
-
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DataLayer {
 
     private static String ReadFile(String fileName) throws IOException {
         StringBuilder tmp = new StringBuilder();
-        FileReader reader = new FileReader("src/main/resources/"+fileName);
+        FileReader reader = new FileReader("src/main/resources/" + fileName);
         int character;
         while ((character = reader.read()) != -1) {
             tmp.append((char) character);
         }
         reader.close();
-
-        return tmp.toString();
+        return tmp.toString().replace("\r", "");
     }
 
     private static void WriteFile(String fileName, String data) {
@@ -34,12 +32,16 @@ public class DataLayer {
         }
     }
 
-    public static List<City> ReadCities() throws IOException {
+    public static List<City> ReadCities() {
         List<City> cities = new ArrayList<>();
-        String[] lines = ReadFile("cities.txt").split("\n");
-        for (int i = 0; i <= lines.length ; i++) {
-            String[] data = lines[i].split(",");
-            cities.add(new City(i, data[0], data[1], Integer.parseInt(data[2])));
+        try {
+            String[] lines = ReadFile("Cities.txt").split("\n");
+            for (int i = 0; i < lines.length; i++) {
+                String[] data = lines[i].split(",");
+                cities.add(new City(i, data[0], data[1], Integer.parseInt(data[2])));
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
         return cities;
     }
