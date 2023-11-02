@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Aircraft {
-    private int id;
+    private String id;
     private String type;
     private String airlineName;
     private final List<Passenger> BoardedPassengers = new ArrayList<>();
@@ -12,16 +12,15 @@ public class Aircraft {
 
     private String airport;
 
-    public Aircraft(int id,String type, String airlineName, int numberOfPassengers, String airport) {
+    public Aircraft(String id,String type, String airlineName, int numberOfPassengers, String airport) {
         this.id = id;
         this.type = type;
         this.airlineName = airlineName;
         this.numberOfPassengers = numberOfPassengers;
         this.airport = airport;
-
     }
 
-    public Aircraft(int id, String type, String airlineName, int numberOfPassengers) {
+    public Aircraft(String id, String type, String airlineName, int numberOfPassengers) {
         this.id = id;
         this.type = type;
         this.airlineName = airlineName;
@@ -32,11 +31,11 @@ public class Aircraft {
 
     // Getters and setters for the fields
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -1,8 +1,3 @@
-Default,null,0,null
-Boeing 747,PAL,416,YYT
-Airbus A380,Emirates,853,JFK
-Boeing 747,Delta,416,JFK
-Airbus A380,Lufthansa,853,YYT
-Boeing 747,United,416,JFK
-Airbus A380,Qantas,853,JFK
-Boeing 747,British Airways,416,YYT
+Default,null,0,null,00000
+Boeing 747,PAL,416,YYT,A17V5
+Airbus A380,Emirates,853,JFK,WS5R5

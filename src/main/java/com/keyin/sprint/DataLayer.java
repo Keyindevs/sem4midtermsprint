@@ -1,9 +1,7 @@
 package com.keyin.sprint;
 
-import com.keyin.sprint.entities.Airport;
-import com.keyin.sprint.entities.City;
-import com.keyin.sprint.entities.Passenger;
-import com.keyin.sprint.entities.Aircraft;
+import com.keyin.sprint.entities.*;
+
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -103,15 +101,30 @@ public class DataLayer {
         List<Aircraft> aircraft = new ArrayList<>();
         try {
             String[] lines = ReadFile("Aircraft.txt").split("\n");
-            for (int i = 0; i < lines.length; i++) {
-                String[] data = lines[i].split(",");
-                aircraft.add(new Aircraft(i, data[0], data[1], Integer.parseInt(data[2]), data[3]));
+            for (String line : lines) {
+                String[] data = line.split(",");
+                aircraft.add(new Aircraft(data[4], data[0], data[1], Integer.parseInt(data[2]), data[3]));
             }
         }
         catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return aircraft;
+    }
+
+    public static List<Flight> ReadFlights() {
+        List<Flight> flights = new ArrayList<>();
+        try {
+            String[] lines = ReadFile("Flights.txt").split("\n");
+            for (String line : lines) {
+                String[] data = line.split(",");
+                flights.add(new Flight(APIRoutes.getAirportByCode(data[0]), APIRoutes.getAirportByCode(data[1]),APIRoutes.getAircraftByID(data[2]), data[3]));
+            }
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return flights;
     }
 
 }

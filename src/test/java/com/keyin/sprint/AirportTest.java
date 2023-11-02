@@ -37,7 +37,7 @@ public class AirportTest {
 
     @Test
     public void testOnPremisePlanes() {
-        airport.setOnPremisePlanes(new Aircraft(0, "Default", "test", 0));
+        airport.setOnPremisePlanes(new Aircraft("AK234", "Default", "test", 0));
         assertEquals("test", airport.getOnPremisePlanes().get(0).getAirlineName());
     }
 

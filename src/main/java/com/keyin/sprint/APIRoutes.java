@@ -23,6 +23,8 @@ public class APIRoutes {
 	 private static  List<Passenger> passengers;
 	 private static  List<Aircraft> aircraft;
 
+	 private static List<Flight> flights;
+
 
 	public static void main(String[] args){
 		init();
@@ -32,6 +34,27 @@ public class APIRoutes {
 	public static int getNextId(List<?> list) {
 		return list.size();
 	}
+
+	public static Airport getAirportByCode(String code) {
+		Airport airport = null;
+		for (Airport tmpAirport:airports){
+			if (tmpAirport.getCode().equals(code)){
+				airport = tmpAirport;
+			}
+		}
+		return airport;
+	}
+
+	public static Aircraft getAircraftByID(String id) {
+		Aircraft tmpCraft = null;
+		for (Aircraft tmpAircraft:aircraft){
+			if (tmpAircraft.getId().equals(id)){
+				tmpCraft= tmpAircraft;
+			}
+		}
+		return tmpCraft;
+	}
+
 
 	public static List<Airport> getAirports() {
 		return airports;
@@ -46,10 +69,15 @@ public class APIRoutes {
 		aircraft = DataLayer.ReadAircraft();
 		airports = DataLayer.ReadAirports();
 		cities = DataLayer.ReadCities();
+		flights = DataLayer.ReadFlights();
 	}
 
 	public static List<Aircraft> getAircraft() {
 		return aircraft;
+	}
+
+	public static List<Flight> getFlights() {
+		return flights;
 	}
 
 

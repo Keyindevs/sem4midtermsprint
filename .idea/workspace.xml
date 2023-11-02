@@ -4,25 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="Reading cities from file">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Aircraft.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Airports.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Passengers.txt" afterDir="false" />
+    <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="Reading data from file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Flight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Flights.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/APIRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/APIRoutes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/DataLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/DataLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Aircraft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Aircraft.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Airport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/City.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Passenger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Cities.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Cities.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Aircraft.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Aircraft.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Passengers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Passengers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/keyin/sprint/AircraftTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/keyin/sprint/AircraftTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/keyin/sprint/AirportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/keyin/sprint/AirportTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/keyin/sprint/PassengerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/keyin/sprint/PassengerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/APIRoutes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/APIRoutes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Aircraft.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Aircraft.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Airport.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Airport.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/City.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/City.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Passenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Passenger.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +166,7 @@
       <workItem from="1698415701787" duration="602000" />
       <workItem from="1698666700169" duration="5310000" />
       <workItem from="1698939519202" duration="3081000" />
-      <workItem from="1698942615939" duration="8567000" />
+      <workItem from="1698942615939" duration="10599000" />
     </task>
     <task id="LOCAL-00001" summary="Initial versioning of files">
       <option name="closed" value="true" />
@@ -335,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698945655699</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Reading data from file">
+      <option name="closed" value="true" />
+      <created>1698951342513</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1698951342513</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +367,8 @@
     <MESSAGE value="Initial POST methods created" />
     <MESSAGE value="reading data from files started" />
     <MESSAGE value="Reading cities from file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reading cities from file" />
+    <MESSAGE value="Reading data from file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reading data from file" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
