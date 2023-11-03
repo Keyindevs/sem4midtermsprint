@@ -137,8 +137,23 @@ public class DataLayer {
         List<Passenger> passengers = new ArrayList<>();
         try {
             String[] lines = ReadFile("Passengers.txt").split("\n");
+            // split into lines
             for (String line : lines) {
+                // split data by commas
                 String[] data = line.split(",");
+                // if the passenger has flights
+                if (data[4] != null) {
+
+                       String[] flightData = data[4].split("/");
+                        for (String flightId : flightData) {
+                            for (Flight flight : APIRoutes.getFlights()) {
+                                if (flight.getId().equals(flightId)) {
+
+                                }
+                            }
+                        }
+
+                }
                 passengers.add(new Passenger(data[0], data[1], data[2]));
             }
         }   catch (IOException e) {

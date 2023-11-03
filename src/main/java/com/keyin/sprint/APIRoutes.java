@@ -160,6 +160,17 @@ public class APIRoutes {
 		return passengers.get(id);
 	}
 
+	@PostMapping("/passenger/flight")
+	public void passengerFlight(@RequestParam(value = "passengerId", defaultValue = "0") String passengerId,
+								@RequestParam(value = "flightId", defaultValue = "0") int flightId) {
+		passengers.forEach(passenger -> {
+			if (String.format("%s|%s|%s",passenger.getFirstName(),passenger.getLastName(),passenger.getHomeTown()).equals(passengerId)) {
+				passenger.setFlight(flights.get(flightId));
+			}
+		});
+		init();
+	}
+
 	@PostMapping("/passenger")
 	public void passenger(@RequestParam(value = "firstName", defaultValue = "null") String firstName,
 						  @RequestParam(value = "lastName", defaultValue = "null") String lastName,
@@ -184,8 +195,9 @@ public class APIRoutes {
     GET /passengers
     GET /passenger?id={id}
     POST /passenger?firstName={firstName}&lastName={lastName}&homeTown={homeTown}
+    POST /pasenger/flight?passengerId={passengerId}&flightId={flightId}
     GET /
-				""";
+""";
 	}
 
 }

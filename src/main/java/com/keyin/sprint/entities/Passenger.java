@@ -7,15 +7,14 @@ public class Passenger {
     private final String firstName;
     private final String lastName;
     private String homeTown;
-
     private List<Flight> flights;
 
     public Passenger(String firstName, String lastName, String homeTown) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.homeTown = homeTown;
-
     }
+
 
     public String getFirstName() {
         return firstName;
