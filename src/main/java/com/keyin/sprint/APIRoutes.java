@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
+import java.io.File;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @RestController
@@ -48,6 +50,15 @@ public class APIRoutes {
 		return tmp;
 	}
 
+	public static Flight getFlightById(String id){
+		for (Flight flight : flights){
+			if (flight.getId().equals(id)){
+				return flight;
+			}
+		}
+		return null;
+	}
+
 	public static Airport getAirportByCode(String code){
 		Airport tmp = null;
 		for (Airport airport : airports){
@@ -58,12 +69,25 @@ public class APIRoutes {
 		return tmp;
 	}
 
+	private Passenger getPassengerByID(String id) {
+		for (Passenger passenger: passengers) {
+			if (String.format("%s%s%s",passenger.getFirstName(),passenger.getLastName(),passenger.getHomeTown()).equals(id)) {
+				return passenger;
+			}
+		}
+		return null;
+	}
+
 	private static void init() {
 		passengers = DataLayer.ReadPassengers();
 		aircraft = DataLayer.ReadAircraft();
 		flights = DataLayer.ReadFlights();
 		airports = DataLayer.ReadAirports();
 		cities = DataLayer.ReadCities();
+	}
+
+	private static void deleteFile(File file) {
+		file.delete();
 	}
 
 	public static void main(String[] args){
@@ -160,23 +184,35 @@ public class APIRoutes {
 		return passengers.get(id);
 	}
 
+	@GetMapping("/passenger/flights")
+	public List<String> passengerFlights(@RequestParam(value = "id", defaultValue = "null") String id) {
+		return Objects.requireNonNull(getPassengerByID(id)).getAircraftFromFlights();
+	}
+
 	@PostMapping("/passenger/flight")
 	public void passengerFlight(@RequestParam(value = "passengerId", defaultValue = "0") String passengerId,
-								@RequestParam(value = "flightId", defaultValue = "0") int flightId) {
+								@RequestParam(value = "flightId", defaultValue = "0") String flightId) {
 		passengers.forEach(passenger -> {
-			if (String.format("%s|%s|%s",passenger.getFirstName(),passenger.getLastName(),passenger.getHomeTown()).equals(passengerId)) {
-				passenger.setFlight(flights.get(flightId));
+			if (String.format("%s%s%s",passenger.getFirstName(),passenger.getLastName(),passenger.getHomeTown()).equals(passengerId)) {
+				passenger.setFlight(getFlightById(flightId));
 			}
 		});
+		DataLayer.clearPassengers();
+		passengers.forEach(passenger -> DataLayer.savePassenger(passenger));
 		init();
 	}
 
 	@PostMapping("/passenger")
 	public void passenger(@RequestParam(value = "firstName", defaultValue = "null") String firstName,
 						  @RequestParam(value = "lastName", defaultValue = "null") String lastName,
-						  @RequestParam(value = "homeTown", defaultValue = "null") String homeTown) {
-		passengers.add(new Passenger(firstName, lastName, homeTown));
-		DataLayer.savePassenger(firstName, lastName, homeTown);
+						  @RequestParam(value = "homeTown", defaultValue = "null") String homeTown,
+						  @RequestParam(value = "flights", defaultValue = "null") List<Flight> flights) {
+		Passenger tmp = new Passenger(firstName, lastName, homeTown);
+		if (flights != null) {
+			flights.forEach(tmp::setFlight);
+		}
+		passengers.add(tmp);
+		DataLayer.savePassenger(tmp);
 		init();
 	}
 

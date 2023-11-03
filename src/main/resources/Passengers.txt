@@ -1,6 +1,5 @@
-Default,null,null,null
-John,Doe,St. John's,null
-Jane,Doe,St. John's,null
-Alex,Singleton,St. John's,null
-Art,Singleton,St. John's,null
-Jimmy,Dingle,New York,null
+Default,null,null,[null]
+Jane,Doe,St. John's,[null, null, com.keyin.sprint.entities.Flight@3a45c1df]
+Alex,Singleton,St. John's,[null]
+Art,Singleton,St. John's,[null]
+Jimmy,Dingle,New York,[null]
