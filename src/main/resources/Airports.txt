@@ -1,3 +1,4 @@
-Default,null,Defaultnull
-John F. Kennedy International Airport,JFK,New YorkNY
-St. John's International Airport,YYT,St. John'sNL
+Default,null,null
+John F. Kennedy International Airport,JFK,New York
+St. John's International Airport,YYT,St. John's
+Alex's Airport,AAP,New York

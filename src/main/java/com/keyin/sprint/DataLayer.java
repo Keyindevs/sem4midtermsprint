@@ -10,48 +10,55 @@ import java.util.List;
 
 public class DataLayer {
 
-    private static void SaveFile(String fileName, String data) {
+    public static void saveAirport(String name, String code, String city) {
         try {
-            FileWriter writer = new FileWriter("src/main/resources/"+fileName);
-            writer.write(data);
+            FileWriter writer = new FileWriter("src/main/resources/Airports.txt", true);
+            writer.write(name + "," + code + "," + city + "\n");
             writer.close();
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public static void SaveCities(List<City> cities) {
-        StringBuilder tmp = new StringBuilder();
-        for (City city : cities) {
-            tmp.append(city.getName()).append(",").append(city.getState()).append(",").append(city.getPopulation()).append("\n");
+    public static void saveCity(String name, String state, int population){
+        try {
+            FileWriter writer = new FileWriter("src/main/resources/Cities.txt", true);
+            writer.write(name + "," + state + "," + population + "\n");
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
-        SaveFile("Cities.txt", tmp.toString());
     }
 
-    public static void SaveAirports(List<Airport> airports) {
-        StringBuilder tmp = new StringBuilder();
-        for (Airport airport : airports) {
-            tmp.append(airport.getName()).append(",").append(airport.getCity()).append(",").append(airport.getName()).append(airport.getCode()).append("\n");
+    public static void saveAircraft(String type,String airline, int numberOfPassengers, String airport, String id){
+        try {
+            FileWriter writer = new FileWriter("src/main/resources/Aircraft.txt", true);
+            writer.write(type + "," + airline + "," + numberOfPassengers + "," + airport + "," + id + "\n");
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
-        SaveFile("Airports.txt", tmp.toString());
-    }
-    
-    public static void SaveAircraft(List<Aircraft> aircraft) {
-        StringBuilder tmp = new StringBuilder();
-        for (Aircraft plane : aircraft) {
-            tmp.append(plane.getType()).append(",").append(plane.getAirlineName()).append(",").append(plane.getNumberOfPassengers()).append(",").append(plane.getAirport()).append("\n");
-        }
-        SaveFile("Aircraft.txt", tmp.toString());
     }
 
-    public static void SavePassengers(List<Passenger> passengers) {
-        StringBuilder tmp = new StringBuilder();
-        for (Passenger passenger : passengers) {
-            tmp.append(passenger.getFirstName()).append(",").append(passenger.getLastName()).append(",").append(passenger.getHomeTown()).append(",").append(passenger.getFlights()).append("\n");
+    public static void savePassenger(String firstName, String lastName, String homeTown){
+        try {
+            FileWriter writer = new FileWriter("src/main/resources/Passengers.txt", true);
+            writer.write(firstName + "," + lastName + "," + homeTown + "," + "null" + "\n");
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
-        SaveFile("Passengers.txt", tmp.toString());
     }
 
+    public static void saveFlight(String origin, String destination, String aircraft, String id) {
+        try {
+            FileWriter writer = new FileWriter("src/main/resources/Flights.txt", true);
+            writer.write(origin + "," + destination + "," + aircraft + "," + id + "\n");
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     private static String ReadFile(String fileName) throws IOException {
         StringBuilder tmp = new StringBuilder();
@@ -78,7 +85,7 @@ public class DataLayer {
                 // get each airport from the list of airports
                 for (Airport airport :APIRoutes.getAirports()) {
                     // if the airport city matches the city in the file append airport
-                    if (airport.getCity().equals(data[0]+data[1])) {
+                    if (airport.getCity().equals(data[0])) {
                         cities.get(i).addAirport(airport);
                     }
                 }
@@ -130,8 +137,8 @@ public class DataLayer {
         List<Passenger> passengers = new ArrayList<>();
         try {
             String[] lines = ReadFile("Passengers.txt").split("\n");
-            for (int i = 0; i < lines.length; i++) {
-                String[] data = lines[i].split(",");
+            for (String line : lines) {
+                String[] data = line.split(",");
                 passengers.add(new Passenger(data[0], data[1], data[2]));
             }
         }   catch (IOException e) {
@@ -167,5 +174,6 @@ public class DataLayer {
         }
         return flights;
     }
+
 
 }

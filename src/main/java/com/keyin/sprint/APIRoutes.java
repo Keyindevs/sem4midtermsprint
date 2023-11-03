@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @RestController
@@ -91,8 +92,8 @@ public class APIRoutes {
 					 @RequestParam(value = "state", defaultValue = "null") String state,
 					 @RequestParam(value = "population", defaultValue = "0") int population) {
 		cities.add(new City(cities.size(), name, state, population));
-		DataLayer.SaveCities(cities);
-		DataLayer.ReadCities();
+		DataLayer.saveCity(name, state, population);
+		init();
 	}
 
 	@GetMapping("/city/airports")
@@ -104,9 +105,9 @@ public class APIRoutes {
 	public void airport(@RequestParam(value = "name", defaultValue = "null") String name,
 						@RequestParam(value = "city", defaultValue = "null") String city,
 						@RequestParam(value = "code", defaultValue = "null") String code) {
-		airports.add(new Airport(name, city, code));
-		DataLayer.SaveAirports(airports);
-		DataLayer.ReadAirports();
+		airports.add(new Airport(name, code, city));
+		DataLayer.saveAirport(name, code, city);
+		init();
 	}
 
 	@GetMapping("/airports")
@@ -119,19 +120,34 @@ public class APIRoutes {
 		return getAirportByCode(code).getOnPremisePlanes();
 	}
 
+	@GetMapping("/aircraft")
+	public List<Aircraft> aircraft() {
+		return aircraft;
+	}
+
 	@PostMapping("/aircraft")
 	public void aircraft(@RequestParam(value = "type", defaultValue = "null") String type,
 						 @RequestParam(value = "airlineName", defaultValue = "null") String airlineName,
 						 @RequestParam(value = "numberOfPassengers", defaultValue = "0") int numberOfPassengers,
 						 @RequestParam(value = "airport", defaultValue = "null") String airport,@RequestParam(value = "id", defaultValue = "null") String id) {
 		aircraft.add(new Aircraft(id, type, airlineName, numberOfPassengers, airport));
-		DataLayer.SaveAircraft(aircraft);
-		DataLayer.ReadAircraft();
+		DataLayer.saveAircraft(type,airlineName,numberOfPassengers,airport,id);
+		init();
 	}
 
 	@GetMapping("/flights")
 	public List<Flight> flights() {
 		return flights;
+	}
+
+	@PostMapping("/flight")
+	public void flight(@RequestParam(value = "origin", defaultValue = "null") String origin,
+					   @RequestParam(value = "destination", defaultValue = "null") String destination,
+					   @RequestParam(value = "aircraft", defaultValue = "null") String aircraft) {
+		String id = new UUID(0,0).toString();
+		flights.add(new Flight(origin, destination, aircraft, id));
+		DataLayer.saveFlight(origin, destination, aircraft, id);
+		init();
 	}
 
 	@GetMapping("/passengers")
@@ -149,13 +165,27 @@ public class APIRoutes {
 						  @RequestParam(value = "lastName", defaultValue = "null") String lastName,
 						  @RequestParam(value = "homeTown", defaultValue = "null") String homeTown) {
 		passengers.add(new Passenger(firstName, lastName, homeTown));
-		DataLayer.SavePassengers(passengers());
-		DataLayer.ReadPassengers();
+		DataLayer.savePassenger(firstName, lastName, homeTown);
+		init();
 	}
 
 	@GetMapping("/")
 	public String home() {
-		return null;
+		return """
+    GET /cities
+    GET /city?name={name}
+    POST /city?name={name}&state={state}&population={population}
+    GET /city/airports?name={name}
+    POST /airport?name={name}&city={city}&code={code}
+    GET /airports
+    GET /airport/aircraft?code={code}
+    POST /aircraft?type={type}&airlineName={airlineName}&numberOfPassengers={numberOfPassengers}&airport={airport}&id={id}
+    GET /flights
+    GET /passengers
+    GET /passenger?id={id}
+    POST /passenger?firstName={firstName}&lastName={lastName}&homeTown={homeTown}
+    GET /
+				""";
 	}
 
 }
