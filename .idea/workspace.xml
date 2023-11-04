@@ -10,6 +10,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/DataLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/DataLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/entities/Passenger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Passengers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Passengers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/APIRoutes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/APIRoutes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Passenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Passenger.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="datastructuring" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,7 +82,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "merge-housekeeping",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "last_opened_file_path": "C:/Users/singl/Documents/GitHub/sem4midtermsprint",
@@ -143,6 +145,7 @@
         <item itemvalue="JUnit.AirportTest.testOnPremisePlanes" />
         <item itemvalue="Spring Boot.APIRoutes" />
         <item itemvalue="JUnit.AirportTest.testOnPremisePlanes" />
+        <item itemvalue="Spring Boot.APIRoutes" />
       </list>
     </recent_temporary>
   </component>

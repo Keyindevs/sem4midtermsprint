@@ -155,15 +155,14 @@ public class DataLayer {
             for (String line : lines) {
                 // split data by commas
                 String[] data = line.split(",");
-                if (data[3] != null) {
-                    List<String> flights = new ArrayList<>(Arrays.asList(data).subList(3, data.length));
-                    List<Flight> flightList = new ArrayList<>();
-                    for (String flight : flights) {
-                        flightList.add(APIRoutes.getFlightById(flight.replace(" ","")));
-                    }
-                    passengers.add(new Passenger(data[0], data[1], data[2], flightList));
-                } else {
+                if (data[3].isEmpty()) {
                     passengers.add(new Passenger(data[0], data[1], data[2]));
+                } else {
+                    List<String> flights = new ArrayList<>();
+                    for (int i = 3; i < data.length; i++) {
+                        flights.add(data[i].strip().replace("[", "").replace("]", ""));
+                    }
+                    passengers.add(new Passenger(data[0], data[1], data[2], flights));
                 }
             }
         }   catch (IOException e) {

@@ -194,7 +194,7 @@ public class APIRoutes {
 								@RequestParam(value = "flightId", defaultValue = "0") String flightId) {
 		passengers.forEach(passenger -> {
 			if (String.format("%s%s%s",passenger.getFirstName(),passenger.getLastName(),passenger.getHomeTown()).equals(passengerId)) {
-				passenger.setFlight(getFlightById(flightId));
+				passenger.setFlight(flightId);
 			}
 		});
 		DataLayer.clearPassengers();
