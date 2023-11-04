@@ -6,9 +6,20 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DataLayer {
+
+    public static void clearPassengers() {
+        try {
+            FileWriter writer = new FileWriter("src/main/resources/Passengers.txt");
+            writer.write("");
+            writer.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 
     public static void saveAirport(String name, String code, String city) {
         try {
@@ -40,10 +51,10 @@ public class DataLayer {
         }
     }
 
-    public static void savePassenger(String firstName, String lastName, String homeTown){
+    public static void savePassenger(Passenger passenger){
         try {
             FileWriter writer = new FileWriter("src/main/resources/Passengers.txt", true);
-            writer.write(firstName + "," + lastName + "," + homeTown + "," + "null" + "\n");
+            writer.write(passenger.toString() + "\n");
             writer.close();
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -70,6 +81,7 @@ public class DataLayer {
         reader.close();
         return tmp.toString().replace("\r", "");
     }
+
     // ReadData Methods
     public static List<City> ReadCities() {
         List<City> cities = new ArrayList<>();
@@ -103,6 +115,7 @@ public class DataLayer {
         }
         return cities;
     }
+
     public static List<Airport> ReadAirports() {
         List<Airport> airports = new ArrayList<>();
         try {
@@ -133,6 +146,7 @@ public class DataLayer {
         }
         return airports;
     }
+
     public static List<Passenger> ReadPassengers(){
         List<Passenger> passengers = new ArrayList<>();
         try {
@@ -141,19 +155,22 @@ public class DataLayer {
             for (String line : lines) {
                 // split data by commas
                 String[] data = line.split(",");
-                // if the passenger has flights
-                if (data[3] != null) {
-                       String[] flightData = data[3].split("/");
-
-
+                if (data[3].isEmpty()) {
+                    passengers.add(new Passenger(data[0], data[1], data[2]));
+                } else {
+                    List<String> flights = new ArrayList<>();
+                    for (int i = 3; i < data.length; i++) {
+                        flights.add(data[i].strip().replace("[", "").replace("]", ""));
+                    }
+                    passengers.add(new Passenger(data[0], data[1], data[2], flights));
                 }
-                passengers.add(new Passenger(data[0], data[1], data[2]));
             }
         }   catch (IOException e) {
             System.out.println(e.getMessage());
         }
         return passengers;
     }
+
     public static List<Aircraft> ReadAircraft() {
         List<Aircraft> aircraft = new ArrayList<>();
         try {
@@ -168,6 +185,7 @@ public class DataLayer {
         }
         return aircraft;
     }
+
     public static List<Flight> ReadFlights() {
         List<Flight> flights = new ArrayList<>();
         try {
@@ -182,6 +200,4 @@ public class DataLayer {
         }
         return flights;
     }
-
-
 }
