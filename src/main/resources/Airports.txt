@@ -2,3 +2,32 @@ Default,null,null
 John F. Kennedy International Airport,JFK,New York
 St. John's International Airport,YYT,St. John's
 Alex's Airport,AAP,New York
+Los Angeles International Airport, LAX, Los Angeles
+Chicago O'Hare International Airport, ORD, Chicago
+Hartsfield-Jackson Atlanta International Airport, ATL, Atlanta
+San Francisco International Airport, SFO, San Francisco
+Tokyo Haneda Airport, HND, Tokyo
+Seattle-Tacoma International Airport, SEA, Seattle
+Orlando International Airport, MCO, Orlando
+Hong Kong International Airport, HKG, Hong Kong
+London Heathrow Airport, LHR, London
+Amsterdam Schiphol Airport, AMS, Amsterdam
+George Bush Intercontinental Airport, IAH, Houston
+Sydney Kingsford Smith Airport, SYD, Sydney
+Incheon International Airport, ICN, Seoul
+Chhatrapati Shivaji Maharaj International Airport, BOM, Mumbai
+Montreal-Pierre Elliott Trudeau International Airport, YUL, Montreal
+Vancouver International Airport, YVR, Vancouver
+Narita International Airport, NRT, Tokyo
+Beijing Capital International Airport, PEK, Beijing
+Mexico City International Airport, MEX, Mexico City
+Adolfo Suárez Madrid–Barajas Airport, MAD, Madrid
+Charles de Gaulle Airport, CDG, Paris
+Leonardo da Vinci-Fiumicino Airport, FCO, Rome
+King Khalid International Airport, RUH, Riyadh
+Soekarno-Hatta International Airport, CGK, Jakarta
+Kuala Lumpur International Airport, KUL, Kuala Lumpur
+Hamad International Airport, DOH, Doha
+Dubai International Airport, DXB, Dubai
+Los Angeles International Airport, LAX, Los Angeles
+San Francisco International Airport, SFO, San Francisco

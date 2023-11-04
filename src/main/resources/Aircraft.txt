@@ -1,3 +1,32 @@
 Default,null,0,null,00000
 Boeing 747,PAL,416,YYT,A17V5
 Airbus A380,Emirates,853,JFK,WS5R5
+Boeing 737,American Airlines,342,LAX,GT6E8
+Boeing 777,United Airlines,456,ORD,KU9H7
+Airbus A320,Southwest Airlines,231,DFW,PL4G2
+Boeing 787,Delta Air Lines,567,ATL,LO3P1
+Embraer E190,JetBlue Airways,123,SFO,WE2T6
+Airbus A330,Qatar Airways,789,HND,QA7T4
+Boeing 767,Alaska Airlines,654,SEA,AL8K3
+Bombardier CRJ900,Allegiant Air,876,MCO,AA6F2
+Airbus A350,Cathay Pacific,321,HKG,CP5R9
+Boeing 737,Spirit Airlines,234,PHX,SP7G1
+Boeing 747,Lufthansa,876,LHR,LH9J8
+Airbus A321,Virgin Atlantic,543,AMS,VA3F6
+Embraer E175,Frontier Airlines,234,IAH,FR2E3
+Airbus A380,Qantas,789,SYD,QF8K3
+Boeing 777,Singapore Airlines,345,ICN,SQ5R4
+Boeing 737,Jet Airways,567,BOM,JA4T6
+Bombardier Q400,Porter Airlines,678,YTZ,PO7R1
+Airbus A319,Air Canada,123,YVR,AC2E5
+Boeing 787,ANA,456,NRT,NH6G7
+Boeing 767,Etihad Airways,789,AUH,EY8H2
+Embraer E190,Azul Brazilian Airlines,345,VCP,AZ5E3
+Airbus A330,Air France,678,CDG,AF6R7
+Boeing 747,KLM,789,AMS,KL3H6
+Airbus A320,Saudi Arabian Airlines,234,RUH,SV4T7
+Boeing 737,Garuda Indonesia,567,CGK,GA9R8
+Bombardier CRJ700,AirAsia,678,KUL,AA5F3
+Airbus A350,Qatar Airways,123,DOH,QA2G4
+Boeing 777,Emirates,456,DUB,EK7H3
+Boeing 767,Turkish Airlines,789,IST,TK6F9

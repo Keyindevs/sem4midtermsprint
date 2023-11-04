@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="not pulling my hair anymore : )">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/APIRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/keyin/sprint/APIRoutes.java" afterDir="false" />
+    <list default="true" id="2004f441-41ae-4f20-a485-c22c2f77bf9e" name="Changes" comment="update .gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Aircraft.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Aircraft.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Flights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Flights.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Passenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/keyin/sprint/entities/Passenger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Passengers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Passengers.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="datastructuring" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -78,7 +80,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "merge-housekeeping",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "openjdk-21",
     "last_opened_file_path": "C:/Users/singl/Documents/GitHub/sem4midtermsprint",
@@ -141,7 +143,6 @@
         <item itemvalue="JUnit.AirportTest.testOnPremisePlanes" />
         <item itemvalue="Spring Boot.APIRoutes" />
         <item itemvalue="JUnit.AirportTest.testOnPremisePlanes" />
-        <item itemvalue="Spring Boot.APIRoutes" />
       </list>
     </recent_temporary>
   </component>
@@ -165,8 +166,6 @@
       <workItem from="1698964089527" duration="3087000" />
       <workItem from="1698967306231" duration="4242000" />
       <workItem from="1698974158194" duration="4328000" />
-      <workItem from="1699019627341" duration="5996000" />
-      <workItem from="1699042690556" duration="8524000" />
     </task>
     <task id="LOCAL-00001" summary="Initial versioning of files">
       <option name="closed" value="true" />
@@ -408,23 +407,7 @@
       <option name="project" value="LOCAL" />
       <updated>1699019443978</updated>
     </task>
-    <task id="LOCAL-00031" summary="update .gitignore">
-      <option name="closed" value="true" />
-      <created>1699029819443</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1699029819443</updated>
-    </task>
-    <task id="LOCAL-00032" summary="not pulling my hair anymore : )">
-      <option name="closed" value="true" />
-      <created>1699061543942</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1699061543942</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -463,8 +446,7 @@
     <MESSAGE value="housekeeping" />
     <MESSAGE value="Fix for PR" />
     <MESSAGE value="update .gitignore" />
-    <MESSAGE value="not pulling my hair anymore : )" />
-    <option name="LAST_COMMIT_MESSAGE" value="not pulling my hair anymore : )" />
+    <option name="LAST_COMMIT_MESSAGE" value="update .gitignore" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,3 +1,33 @@
 Default,null,0
 New York,NY,8623000
 St. John's,NL,106172
+Los Angeles,CA,3990456
+Chicago,IL,2716000
+Atlanta,GA,498044
+San Francisco,CA,870887
+Tokyo,,13926816
+Seattle,WA,744955
+Orlando,FL,287442
+Hong Kong,,7392170
+London,,8982146
+Amsterdam,,8217522
+Houston,TX,2320259
+Sydney,,5312163
+Seoul,,9720846
+Mumbai,,20411052
+Montreal,QC,1780000
+Vancouver,BC,631486
+Tokyo,,13926816
+Beijing,,21542003
+Mexico City,,8918653
+Madrid,,3334730
+Paris,,2140526
+Rome,,2870500
+Riyadh,,613745
+Jakarta,,10390741
+Kuala Lumpur,,1800000
+Doha,,796947
+Dubai,,3066070
+Los Angeles,CA,3990456
+San Francisco,CA,870887
+
