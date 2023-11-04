@@ -168,7 +168,7 @@ public class APIRoutes {
 	public void flight(@RequestParam(value = "origin", defaultValue = "null") String origin,
 					   @RequestParam(value = "destination", defaultValue = "null") String destination,
 					   @RequestParam(value = "aircraft", defaultValue = "null") String aircraft) {
-		String id = new UUID(0,0).toString();
+		String id = UUID.randomUUID().toString();
 		flights.add(new Flight(origin, destination, aircraft, id));
 		DataLayer.saveFlight(origin, destination, aircraft, id);
 		init();
