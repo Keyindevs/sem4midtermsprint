@@ -30,4 +30,4 @@ Kuala Lumpur International Airport, KUL, Kuala Lumpur
 Hamad International Airport, DOH, Doha
 Dubai International Airport, DXB, Dubai
 Los Angeles International Airport, LAX, Los Angeles
-San Francisco International Airport, SFO, San Francisco
+San Francisco International Airport, SFO, San Francisconull,null,null

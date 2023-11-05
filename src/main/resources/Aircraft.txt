@@ -30,3 +30,5 @@ Bombardier CRJ700,AirAsia,678,KUL,AA5F3
 Airbus A350,Qatar Airways,123,DOH,QA2G4
 Boeing 777,Emirates,456,DUB,EK7H3
 Boeing 767,Turkish Airlines,789,IST,TK6F9
+bushPlane,Alex's Planes,6,YYT,A34TY
+boeing 420,yes,6,YYT,45ASD
